@@ -21,7 +21,7 @@ class Cliente(models.Model):
     vehiculo = models.ForeignKey('Vehiculo',on_delete=models.CASCADE,)
 
     def __str__(self):
-        return self.nombre +' '+ self.cedula
+        return self.cedula
 
 
 class Usuario(models.Model):
