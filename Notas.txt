@@ -1,0 +1,14 @@
+
+
+
+
+# BBDD impacto cambios 
+python manage.py makemigrations denuncia
+python manage.py migrate denuncia
+
+# Django, crear administrador
+python manage.py createsuperuser
+
+
+
+Una vez más vamos a crear: un enlace a la página, una dirección URL, una vista y una plantilla.
