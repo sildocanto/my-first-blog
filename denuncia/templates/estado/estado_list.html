@@ -1,0 +1,19 @@
+{% extends 'estado/base.html' %}
+
+{% block content %}
+
+	<table class='table'>
+		<tr>
+			<th>Id</th><th>Tipos</th>
+		</tr>
+		{% for estado in estados %} 
+			<tr>
+				<td> <a href="{% url 'estado_detail' pk=estado.id %}">{{ estado.id }}</a></td>
+				<td>{{ estado.tipo }} </td>
+			</tr>	
+		{% endfor %}			
+	</table>	
+	
+	
+{% endblock %}
+

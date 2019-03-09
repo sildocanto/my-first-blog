@@ -4,6 +4,9 @@ from django.utils import timezone
 
 class Vehiculo(models.Model):
     matricula = models.CharField(primary_key=True, max_length=7)
+    cedula = models.ForeignKey('Cliente',on_delete=models.CASCADE,max_length=8)
+    nombre = models.CharField(max_length=30)
+
 
     def __str__(self):
         return self.matricula 

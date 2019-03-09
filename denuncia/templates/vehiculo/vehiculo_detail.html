@@ -1,0 +1,15 @@
+{% extends 'vehiculo/base.html' %}
+
+{% block content %}
+    <div class="vehiculo">
+        {% if vehiculo.matricula %}
+            <div class="date">
+                {{ vehiculo.matricula}}
+            </div>        
+        {% endif %}
+        <a class="btn btn-default" href="{% url 'vehiculo_edit' pk=vehiculo.matricula %}"><span class="glyphicon glyphicon-pencil"></span></a>
+        <a class="btn btn-default" href="{% url 'vehiculo_delete' pk=vehiculo.matricula %}"><span class="glyphicon glyphicon-trash"></span></a>        
+        <h1>{{ vehiculo.matricula }}</h1>
+        <p>{{ vehiculo.nombre|linebreaksbr }}</p>
+    </div>
+{% endblock %}
