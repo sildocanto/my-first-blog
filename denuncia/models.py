@@ -4,7 +4,7 @@ from django.utils import timezone
 
 class Vehiculo(models.Model):
     matricula = models.CharField(primary_key=True, max_length=7)
-
+    
     def __str__(self):
         return self.matricula 
  
@@ -51,7 +51,7 @@ class Incidente(models.Model):
     poliza = models.ForeignKey('Poliza',on_delete=models.CASCADE,) 
     hay_heridos = models.BooleanField()
     hay_terceros = models.BooleanField()
-    fehca_incidente = models.DateTimeField(default=timezone.now)
+    fecha_incidente = models.DateTimeField(default=timezone.now)
     estado = models.ForeignKey('Estado',on_delete=models.CASCADE,)
     pro_nombre = models.CharField(max_length=30)
     pro_cedula = models.CharField(max_length=8)
@@ -84,10 +84,10 @@ class Archivo(models.Model):
     def __str__(self):
         return self.link 
 
-class Comentarios(models.Model):
+class Comentario(models.Model):
     id = models.AutoField(primary_key=True)
     incidente = models.ForeignKey('Incidente',on_delete=models.CASCADE,)
-    comentarios = models.TextField(max_length=400)    
+    comentario = models.TextField(max_length=400)    
     fecha =  models.DateTimeField(default=timezone.now)   
     usuario = models.CharField(max_length=8)    
     unidad_org = models.CharField(max_length=25)

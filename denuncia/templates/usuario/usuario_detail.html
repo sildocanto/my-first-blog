@@ -1,0 +1,15 @@
+{% extends 'usuario/base.html' %}
+
+{% block content %}
+    <div class="usuario">
+        {% if usuario.usuario %}
+            <div class="date">
+                {{ usuario.usuario_id}}
+            </div>        
+        {% endif %}
+        <a class="btn btn-default" href="{% url 'usuario_edit' pk=usuario.usuario_id %}"><span class="glyphicon glyphicon-pencil"></span></a>
+        <a class="btn btn-default" href="{% url 'usuario_delete' pk=usuario.usuario_id %}"><span class="glyphicon glyphicon-trash"></span></a>        
+        <h1>{{ usuario.usuario_id }}</h1>
+        <p>{{ usuario.nombre|linebreaksbr }}</p>
+    </div>
+{% endblock %}

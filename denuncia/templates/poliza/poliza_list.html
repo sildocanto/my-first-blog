@@ -1,0 +1,23 @@
+{% extends 'poliza/base.html' %}
+
+{% block content %}
+
+	<table class='table'>
+		<tr>
+			<th>Nro_poliza</th><th>Vehiculo</th><th>Nombre</th><th>Cedula</th>
+		</tr>
+		{% for poliza in polizas %} 
+			<tr>
+				<td> <a href="{% url 'poliza_detail' pk=poliza.nro_poliza %}">{{ poliza.nro_poliza }}</a></td>
+				<td>{{ poliza.vehiculo.matricula }} </td>
+				<td>{{ poliza.cliente.nombre }} </td>
+				<td>{{ poliza.cliente.cedula }} </td>
+				
+			</tr>	
+		{% endfor %}			
+	</table>	
+	
+	
+{% endblock %}
+
+

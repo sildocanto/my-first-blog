@@ -1,0 +1,15 @@
+{% extends 'archivo/base.html' %}
+
+{% block content %}
+    <div class="archivo">
+        {% if archivo.id %}
+            <div class="date">
+                {{ archivo.id}}
+            </div>        
+        {% endif %}
+        <a class="btn btn-default" href="{% url 'archivo_edit' pk=archivo.id %}"><span class="glyphicon glyphicon-pencil"></span></a>
+        <a class="btn btn-default" href="{% url 'archivo_delete' pk=archivo.id %}"><span class="glyphicon glyphicon-trash"></span></a>        
+        <h1>{{ archivo.id }}</h1>
+        <p>{{ archivo.nombre|linebreaksbr }}</p>
+    </div>
+{% endblock %}

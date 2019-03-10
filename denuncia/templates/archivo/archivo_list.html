@@ -1,0 +1,23 @@
+{% extends 'archivo/base.html' %}
+
+{% block content %}
+
+	<table class='table'>
+		<tr>
+			<th>Link</th><th>Incidente</th><th>Poliza</th><th>Vehiculo</th><th>Cliente</th><th>Cedula cliente</th>
+		</tr>
+		{% for archivo in archivos %} 
+			<tr>
+				<td> <a href="{% url 'archivo_detail' pk=archivo.id %}">{{ archivo.link }}</a></td>
+				<td>{{archivo.incidente.nro_incidente }} </td>
+				<td>{{archivo.incidente.poliza.nro_poliza }} </td>
+				<td>{{archivo.incidente.poliza.vehiculo.matricula }} </td>
+				<td>{{archivo.incidente.poliza.cliente.nombre }} </td>
+				<td>{{archivo.incidente.poliza.cliente.cedula }} </td>
+			</tr>	
+		{% endfor %}			
+	</table>	
+	
+	
+{% endblock %}
+

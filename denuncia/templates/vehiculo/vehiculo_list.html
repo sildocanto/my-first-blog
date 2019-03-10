@@ -1,0 +1,20 @@
+{% extends 'vehiculo/base.html' %}
+
+{% block content %}
+
+	<table class='table'>
+		<tr>
+			<th>Vehiculo</th>
+		</tr>
+		{% for vehiculo in vehiculos %} 
+			<tr>
+				<td> <a href="{% url 'vehiculo_detail' pk=vehiculo.matricula %}">{{ vehiculo.matricula }}</a></td>
+			</tr>	
+		{% endfor %}			
+	</table>	
+	
+	
+{% endblock %}
+
+
+
