@@ -1,0 +1,15 @@
+{% extends 'comentario/base.html' %}
+
+{% block content %}
+    <div class="comentario">
+        {% if comentario.id %}
+            <div class="date">
+                {{ comentario.id}}
+            </div>        
+        {% endif %}
+        <a class="btn btn-default" href="{% url 'comentario_edit' pk=comentario.id %}"><span class="glyphicon glyphicon-pencil"></span></a>
+        <a class="btn btn-default" href="{% url 'comentario_delete' pk=comentario.id %}"><span class="glyphicon glyphicon-trash"></span></a>        
+        <h1>{{ comentario.id }}</h1>
+        <p>{{ comentario.nombre|linebreaksbr }}</p>
+    </div>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'incidente/base.html' %}
+
+{% block content %}
+    <div class="incidente">
+        {% if incidente.nro_incidente %}
+            <div class="date">
+                {{ incidente.nro_incidente}}
+            </div>        
+        {% endif %}
+        <a class="btn btn-default" href="{% url 'incidente_edit' pk=incidente.nro_incidente %}"><span class="glyphicon glyphicon-pencil"></span></a>
+        <a class="btn btn-default" href="{% url 'incidente_delete' pk=incidente.nro_incidente %}"><span class="glyphicon glyphicon-trash"></span></a>        
+        <h1>{{ incidente.nro_incidente }}</h1>
+        <p>{{ incidente.poliza|linebreaksbr }}</p>
+    </div>
+{% endblock %}

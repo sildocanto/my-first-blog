@@ -1,0 +1,19 @@
+{% extends 'usuario/base.html' %}
+
+{% block content %}
+
+	<table class='table'>
+		<tr>
+			<th>Nombre</th><th>Clave</th>
+		</tr>
+		{% for usuario in usuarios %} 
+			<tr>
+				<td> <a href="{% url 'usuario_detail' pk=usuario.usuario_id %}">{{ usuario.nombre }}</a></td>
+				<td>{{ usuario.clave }} </td>
+			</tr>	
+		{% endfor %}			
+	</table>	
+	
+	
+{% endblock %}
+

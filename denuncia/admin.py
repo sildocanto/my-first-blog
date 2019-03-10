@@ -6,7 +6,7 @@ from .models import Usuario
 from .models import Poliza
 from .models import Incidente
 from .models import Archivo
-from .models import Comentarios
+from .models import Comentario
 
 
 admin.site.register(Vehiculo)
@@ -16,4 +16,4 @@ admin.site.register(Usuario)
 admin.site.register(Poliza)
 admin.site.register(Incidente)
 admin.site.register(Archivo)
-admin.site.register(Comentarios)
+admin.site.register(Comentario)

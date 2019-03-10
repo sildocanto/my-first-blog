@@ -3,12 +3,23 @@
 
 
 # BBDD impacto cambios 
-python manage.py makemigrations denuncia
-python manage.py migrate denuncia
+$ python manage.py makemigrations denuncia
+$ python manage.py migrate denuncia
 
 # Django, crear administrador
-python manage.py createsuperuser
+$ python manage.py createsuperuser
 
 
 
-Una vez más vamos a crear: un enlace a la página, una dirección URL, una vista y una plantilla.
+# Uso Git
+# Commit local
+1) $ git status 
+2) $ git add --all .
+3) $ git commit -m “ingresar comentario”
+
+# Commit en Github
+$ git push -u origin master
+
+# Subir a Server PythonAnywhere (Desde una consola bash)
+1) $ git fetch
+2) $ git pull
