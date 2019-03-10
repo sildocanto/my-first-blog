@@ -23,6 +23,10 @@ class Cliente(models.Model):
     def __str__(self):
         return self.cedula
 
+    def getVehiculo(self):
+        return self.vehiculo.matricula
+           
+
 
 class Usuario(models.Model):
     usuario_id  = models.AutoField(primary_key=True)

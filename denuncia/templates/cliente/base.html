@@ -1,7 +1,7 @@
 {% load static %}
 <html>
     <head>
-        <title>Clientes</title>
+        <title>Siniestros</title>
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
         <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
@@ -11,6 +11,12 @@
         <div class="page-header">
             <a href="{% url 'cliente_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
             <h1><a href="/">Clientes</a></h1>
+            <nav>
+                <ul>
+                    <li><a href='/'>Denuncia</a></li>
+                    <!--li><a href='/cliente/list/'></a></li-->
+                </ul>
+            </nav>          
         </div>
         <div class="content container">
             <div class="row">

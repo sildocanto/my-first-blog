@@ -2,7 +2,8 @@ from django.shortcuts import redirect
 from django.shortcuts import render, get_object_or_404
 from django.utils import timezone
 # Create your views here.
-from .forms import ClienteForm
+from .forms import *
+#from .forms import ClienteForm
 
 from django.http import HttpResponse
 from denuncia.models import Cliente
@@ -38,7 +39,7 @@ def cliente_edit(request,pk):
 
 def cliente_delete(request,pk):
     cliente = get_object_or_404(Cliente, cedula=pk)
-    cliente.delete
+    cliente.delete()
     return redirect('cliente_list') 
 
 def cliente_list(request):
@@ -50,3 +51,33 @@ def cliente_detail(request,pk):
     return render(request, 'cliente/cliente_detail.html', {'cliente': cliente})       
 
 
+def cliente_intro(request):
+    if request.method == "POST":
+        form = IniClienteForm(request.POST)
+        pk = request.POST.get("cedula", "")
+        try:
+            cliente = Cliente.objects.get(pk=pk)
+            if form.is_valid():
+                return redirect('cliente_detail', pk) 
+        except Cliente.DoesNotExist:
+        #    return redirect('cliente_list')      
+            return render(request, 'cliente/cliente_NoEncontrado.html',) 
+    else:
+        form = IniClienteForm()
+    return render(request, 'cliente/cliente_intro.html', {'form': form})          
+    
+
+def cliente_denuncia(request):
+    if request.method == "POST":
+        form = IniClienteForm(request.POST)
+        pk = request.POST.get("cedula", "")
+        try:
+            cliente = Cliente.objects.get(pk=pk)
+            if form.is_valid():
+                return redirect('cliente_detail', pk) 
+        except Cliente.DoesNotExist:
+        #    return redirect('cliente_list')      
+            return render(request, 'cliente/cliente_NoEncontrado.html',) 
+    else:
+        form = IniClienteForm()
+    return render(request, 'cliente/cliente_intro.html', {'form': form})  
