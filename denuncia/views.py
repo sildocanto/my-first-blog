@@ -3,10 +3,8 @@ from django.shortcuts import render, get_object_or_404
 from django.utils import timezone
 # Create your views here.
 from .forms import *
-<<<<<<< HEAD
+
 #from .forms import ClienteForm
-=======
->>>>>>> eed97789f87c7b6aa94e8eac792c8d2f8cd9f672
 
 from django.http import HttpResponse
 from denuncia.models import *
@@ -54,7 +52,6 @@ def cliente_detail(request,pk):
     return render(request, 'cliente/cliente_detail.html', {'cliente': cliente})       
 
 
-<<<<<<< HEAD
 def cliente_intro(request):
     if request.method == "POST":
         form = IniClienteForm(request.POST)
@@ -85,7 +82,6 @@ def cliente_denuncia(request):
     else:
         form = IniClienteForm()
     return render(request, 'cliente/cliente_intro.html', {'form': form})  
-=======
 
 def estado_new(request):
     if request.method == "POST":
@@ -241,9 +237,6 @@ def usuario_new(request):
         form = UsuarioForm(request.POST)
         if form.is_valid():
             usuario = form.save(commit=False)
-           # cliente.cedula = request.cedula
-           # cliente.nombre = request.nombre
-           # cliente.vehiculo = request.vehiculo
             usuario.save()
             return redirect('usuario_detail', pk=usuario.usuario_id)
     else:
@@ -256,8 +249,6 @@ def usuario_edit(request,pk):
         form = UsuarioForm(request.POST, instance=usuario)
         if form.is_valid():
             usuario = form.save(commit=False)
-         #   post.author = request.user
-         #   post.published_date = timezone.now()
             usuario.save()
             return redirect('usuario_detail', pk=usuario.usuario_id)
     else:
@@ -284,9 +275,6 @@ def archivo_new(request):
         form = ArchivoForm(request.POST)
         if form.is_valid():
             archivo = form.save(commit=False)
-           # cliente.cedula = request.cedula
-           # cliente.nombre = request.nombre
-           # cliente.vehiculo = request.vehiculo
             archivo.save()
             return redirect('archivo_detail', pk=archivo.id)
     else:
@@ -299,8 +287,6 @@ def archivo_edit(request,pk):
         form = ArchivoForm(request.POST, instance=archivo)
         if form.is_valid():
             archivo = form.save(commit=False)
-         #   post.author = request.user
-         #   post.published_date = timezone.now()
             archivo.save()
             return redirect('archivo_detail', pk=archivo.id)
     else:
@@ -326,9 +312,6 @@ def comentario_new(request):
         form = ComentarioForm(request.POST)
         if form.is_valid():
             comentario = form.save(commit=False)
-           # cliente.cedula = request.cedula
-           # cliente.nombre = request.nombre
-           # cliente.vehiculo = request.vehiculo
             comentario.save()
             return redirect('comentario_detail', pk=comentario.id)
     else:
@@ -341,8 +324,6 @@ def comentario_edit(request,pk):
         form = ComentarioForm(request.POST, instance=comentario)
         if form.is_valid():
             comentario = form.save(commit=False)
-         #   post.author = request.user
-         #   post.published_date = timezone.now()
             comentario.save()
             return redirect('comentario_detail', pk=comentario.id)
     else:
@@ -363,15 +344,3 @@ def comentario_detail(request,pk):
     return render(request, 'comentario/comentario_detail.html', {'comentario': comentario})
 
 
-
-
-
-
-
-
-
-
-
-
-
->>>>>>> eed97789f87c7b6aa94e8eac792c8d2f8cd9f672

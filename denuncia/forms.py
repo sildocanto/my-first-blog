@@ -4,7 +4,6 @@ from .models import *
 class ClienteForm(forms.ModelForm):
     class Meta:
         model = Cliente
-<<<<<<< HEAD
         fields = ('cedula', 'nombre','vehiculo',)
 
 class IniClienteForm(forms.Form):
@@ -26,8 +25,6 @@ class XIniClienteForm(forms.ModelForm):
 			'cedula': forms.TextInput(attrs={'class':'form-control'}),
 			'matricula': forms.TextInput(attrs={'class':'form-control'}),
 		}
-=======
-        fields = ('cedula', 'nombre', 'vehiculo')
 
 
 class EstadoForm(forms.ModelForm):
@@ -70,4 +67,3 @@ class ComentarioForm(forms.ModelForm):
     class Meta:
         model = Comentario
         fields = ('id', 'incidente', 'comentario', 'fecha', 'usuario', 'unidad_org')
->>>>>>> eed97789f87c7b6aa94e8eac792c8d2f8cd9f672
