@@ -4,17 +4,16 @@
 
 	<table class='table'>
 		<tr>
-			<th>Vehiculo</th>
+			<th>Matricula</th>
 		</tr>
 		{% for vehiculo in vehiculos %} 
 			<tr>
 				<td> <a href="{% url 'vehiculo_detail' pk=vehiculo.matricula %}">{{ vehiculo.matricula }}</a></td>
+				<td>{{ estado.tipo }} </td>
 			</tr>	
 		{% endfor %}			
 	</table>	
 	
 	
 {% endblock %}
-
-
 

@@ -15,9 +15,6 @@ def cliente_new(request):
         form = ClienteForm(request.POST)
         if form.is_valid():
             cliente = form.save(commit=False)
-           # cliente.cedula = request.cedula
-           # cliente.nombre = request.nombre
-           # cliente.vehiculo = request.vehiculo
             cliente.save()
             return redirect('cliente_detail', pk=cliente.cedula)
     else:
@@ -118,43 +115,6 @@ def estado_list(request):
 def estado_detail(request,pk):
     estado = get_object_or_404(Estado, id=pk)
     return render(request, 'estado/estado_detail.html', {'estado': estado})   
-
-
-def vehiculo_new(request):
-    if request.method == "POST":
-        form = VehiculoForm(request.POST)
-        if form.is_valid():
-            vehiculo = form.save(commit=False)
-            vehiculo.save()
-            return redirect('vehiculo_detail', pk=vehiculo.matricula)
-    else:
-        form = VehiculoForm()
-    return render(request, 'vehiculo/vehiculo_edit.html', {'form': form})
-
-def vehiculo_edit(request,pk):
-    vehiculo = get_object_or_404(Vehiculo, matricula=pk)
-    if request.method == "POST":
-        form = VehiculoForm(request.POST, instance=vehiculo)
-        if form.is_valid():
-            vehiculo = form.save(commit=False)
-            vehiculo.save()
-            return redirect('vehiculo_detail', pk=vehiculo.matricula)
-    else:
-        form = VehiculoForm(instance=vehiculo)
-    return render(request, 'vehiculo/vehiculo_edit.html', {'form': form})    
-
-def vehiculo_delete(request,pk):
-    vehiculo = get_object_or_404(Vehiculo, matricula=pk)
-    vehiculo.delete()
-    return redirect('vehiculo_list') 
-
-def vehiculo_list(request):
-    vehiculos = Vehiculo.objects.order_by('matricula')
-    return render(request, 'vehiculo/vehiculo_list.html', {'vehiculos': vehiculos})
-
-def vehiculo_detail(request,pk):
-    vehiculo = get_object_or_404(Vehiculo, matricula=pk)
-    return render(request, 'vehiculo/vehiculo_detail.html', {'vehiculo': vehiculo})   
 
 
 def incidente_new(request):
@@ -344,3 +304,38 @@ def comentario_detail(request,pk):
     return render(request, 'comentario/comentario_detail.html', {'comentario': comentario})
 
 
+def vehiculo_new(request):
+    if request.method == "POST":
+        form = VehiculoForm(request.POST)
+        if form.is_valid():
+            vehiculo = form.save(commit=False)
+            vehiculo.save()
+            return redirect('vehiculo_detail', pk=vehiculo.matricula)
+    else:
+        form = VehiculoForm()
+    return render(request, 'vehiculo/vehiculo_edit.html', {'form': form})
+
+def vehiculo_edit(request,pk):
+    vehiculo = get_object_or_404(Vehiculo, matricula=pk)
+    if request.method == "POST":
+        form = VehiculoForm(request.POST, instance=vehiculo)
+        if form.is_valid():
+            vehiculo = form.save(commit=False)
+            vehiculo.save()
+            return redirect('vehiculo_detail', pk=vehiculo.matricula)
+    else:
+        form = VehiculoForm(instance=vehiculo)
+    return render(request, 'vehiculo/vehiculo_edit.html', {'form': form})    
+
+def vehiculo_delete(request,pk):
+    vehiculo = get_object_or_404(Vehiculo, matricula=pk)
+    vehiculo.delete()
+    return redirect('vehiculo_list') 
+
+def vehiculo_list(request):
+    vehiculos = Vehiculo.objects.order_by('matricula')
+    return render(request, 'vehiculo/vehiculo_list.html', {'vehiculos': vehiculos})
+
+def vehiculo_detail(request,pk):
+    vehiculo = get_object_or_404(Vehiculo, matricula=pk)
+    return render(request, 'vehiculo/vehiculo_detail.html', {'vehiculo': vehiculo})   

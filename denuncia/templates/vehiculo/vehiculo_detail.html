@@ -2,7 +2,7 @@
 
 {% block content %}
     <div class="vehiculo">
-        {% if vehiculo.matricula %}
+        {% if estado.id %}
             <div class="date">
                 {{ vehiculo.matricula}}
             </div>        
@@ -10,6 +10,6 @@
         <a class="btn btn-default" href="{% url 'vehiculo_edit' pk=vehiculo.matricula %}"><span class="glyphicon glyphicon-pencil"></span></a>
         <a class="btn btn-default" href="{% url 'vehiculo_delete' pk=vehiculo.matricula %}"><span class="glyphicon glyphicon-trash"></span></a>        
         <h1>{{ vehiculo.matricula }}</h1>
-        <p>{{ vehiculo.nombre|linebreaksbr }}</p>
+        <p>{{ vehiculo.matricula|linebreaksbr }}</p>
     </div>
 {% endblock %}

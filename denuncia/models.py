@@ -92,8 +92,6 @@ class Comentario(models.Model):
     usuario = models.CharField(max_length=8)    
     unidad_org = models.CharField(max_length=25)
 
-
-
     def publish(self):
         self.published_date = timezone.now()
         self.save()
