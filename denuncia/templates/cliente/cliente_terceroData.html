@@ -1,0 +1,23 @@
+{% extends 'cliente/base.html' %}
+
+{% block content %}
+    <div class="poliza">
+
+    	<h1>xxxxxxx</h1>>
+    	<!--h3>{{ poliza.cliente.nombre }}</h3>
+    	<h4>{{ poliza.cliente.vehiculo.matricula }}</h4>
+
+    	<p>
+
+    	<h1>Hay <b>Terceros</b> involucrados:  ? </h1>
+
+        <a class="btn btn-default" href="{% url 'cliente_detail' pk=poliza.nro_poliza %}">No</a>   
+        <a class="btn btn-default" href="{% url '911' %}">Si</a-->  
+
+     	<form method="POST" class="post-form">{% csrf_token %}
+        	{{ form.as_p }}
+        	<button type="submit" class="save btn btn-default">Guardar</button>
+    	</form>	
+
+    </div>
+{% endblock %}

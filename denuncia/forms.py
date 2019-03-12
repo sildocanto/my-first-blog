@@ -10,8 +10,17 @@ class IniClienteForm(forms.Form):
 	cedula = forms.CharField(max_length=100)
 
 
+class TerceroDataForm(forms.Form):
+    ter_matricula = forms.CharField(max_length=7)
+    ter_aseguradora = forms.CharField(max_length=30) 
+    ter_propietario = forms.BooleanField()
+    ter_nombre_conductor = forms.CharField(max_length=30)
+    ter_cedula_conductor = forms.CharField(max_length=8)
+    ter_telefono_conductor = forms.CharField(max_length=9) 
 
-class Xxxxx(forms.ModelForm):
+
+
+class Xxx__Incidente(forms.ModelForm):
     nro_incidente = models.AutoField(primary_key=True)
     poliza = models.ForeignKey('Poliza',on_delete=models.CASCADE,) 
     hay_heridos = models.BooleanField()
@@ -34,21 +43,7 @@ class Xxxxx(forms.ModelForm):
     fecha_mod = models.DateTimeField(default=timezone.now)
 
 
-class XIniClienteForm(forms.ModelForm):
-	class Meta:
-		model = Cliente
-		fields = [
-			'cedula',
-			'vehiculo',
-		]
-		labels = {
-			'cedula': 'Cedula',
-			'vehiculo':'Matricula',
-		}
-		widgets = {
-			'cedula': forms.TextInput(attrs={'class':'form-control'}),
-			'matricula': forms.TextInput(attrs={'class':'form-control'}),
-		}
+
 
 
 class EstadoForm(forms.ModelForm):

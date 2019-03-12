@@ -68,11 +68,20 @@ def cliente_hayHerido(request,pk):
     return render(request, 'cliente/cliente_hayHerido.html', {'poliza': poliza})
 
 def cliente_hayTercero(request,pk):
-    poliza = get_object_or_404(Poliza, cliente=pk)
+    poliza = get_object_or_404(Poliza, nro_poliza=pk)
     return render(request, 'cliente/cliente_hayTercero.html', {'poliza': poliza})
 
 def cliente_911(request):
     return render(request, 'cliente/911.html') 
+
+def cliente_terceroData(request,pk):
+    if request.method == "POST":
+        form = TerceroDataForm() 
+        poliza = get_object_or_404(Poliza, nro_poliza=pk)
+
+    else: 
+        form = TerceroDataForm()        
+    return render(request, 'cliente/cliente_terceroData.html', {'poliza': poliza})
 
 
 
