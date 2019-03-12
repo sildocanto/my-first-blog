@@ -1,7 +1,6 @@
 from django.shortcuts import redirect
 from django.shortcuts import render, get_object_or_404
 from django.utils import timezone
-# Create your views here.
 from .forms import *
 
 #from .forms import ClienteForm
@@ -56,29 +55,51 @@ def cliente_intro(request):
         try:
             cliente = Cliente.objects.get(pk=pk)
             if form.is_valid():
-                return redirect('cliente_detail', pk) 
-        except Cliente.DoesNotExist:
-        #    return redirect('cliente_list')      
+                #return redirect('cliente_detail',pk) 
+                return redirect('cliente_hayHerido',pk)      
+        except Cliente.DoesNotExist:   
             return render(request, 'cliente/cliente_NoEncontrado.html',) 
     else:
         form = IniClienteForm()
     return render(request, 'cliente/cliente_intro.html', {'form': form})          
     
+def cliente_hayHerido(request,pk):
+    poliza = get_object_or_404(Poliza, cliente=pk)
+    return render(request, 'cliente/cliente_hayHerido.html', {'poliza': poliza})
 
-def cliente_denuncia(request):
-    if request.method == "POST":
-        form = IniClienteForm(request.POST)
-        pk = request.POST.get("cedula", "")
-        try:
-            cliente = Cliente.objects.get(pk=pk)
-            if form.is_valid():
-                return redirect('cliente_detail', pk) 
-        except Cliente.DoesNotExist:
-        #    return redirect('cliente_list')      
-            return render(request, 'cliente/cliente_NoEncontrado.html',) 
-    else:
-        form = IniClienteForm()
-    return render(request, 'cliente/cliente_intro.html', {'form': form})  
+def cliente_hayTercero(request,pk):
+    poliza = get_object_or_404(Poliza, cliente=pk)
+    return render(request, 'cliente/cliente_hayTercero.html', {'poliza': poliza})
+
+def cliente_911(request):
+    return render(request, 'cliente/911.html') 
+
+
+
+#def cliente_denuncia(request):
+#    if request.method == "POST":
+#        form = IniClienteForm(request.POST)
+#        pk = request.POST.get("cedula", "")
+#        try:
+#            cliente = Cliente.objects.get(pk=pk)
+#            if form.is_valid():
+#                return redirect('cliente_detail', pk) 
+#        except Cliente.DoesNotExist:
+#        #    return redirect('cliente_list')      
+#            return render(request, 'cliente/cliente_NoEncontrado.html',) 
+#    else:
+#        form = IniClienteForm()
+#    return render(request, 'cliente/cliente_intro.html', {'form': form})  
+
+
+
+
+
+
+
+
+
+
 
 def estado_new(request):
     if request.method == "POST":

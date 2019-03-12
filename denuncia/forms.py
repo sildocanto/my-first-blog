@@ -1,5 +1,5 @@
 from django import forms
-from .models import *
+from denuncia.models import *
 
 class ClienteForm(forms.ModelForm):
     class Meta:
@@ -8,6 +8,30 @@ class ClienteForm(forms.ModelForm):
 
 class IniClienteForm(forms.Form):
 	cedula = forms.CharField(max_length=100)
+
+
+
+class Xxxxx(forms.ModelForm):
+    nro_incidente = models.AutoField(primary_key=True)
+    poliza = models.ForeignKey('Poliza',on_delete=models.CASCADE,) 
+    hay_heridos = models.BooleanField()
+    hay_terceros = models.BooleanField()
+    fecha_incidente = models.DateTimeField(default=timezone.now)
+    estado = models.ForeignKey('Estado',on_delete=models.CASCADE,)
+    pro_nombre = models.CharField(max_length=30)
+    pro_cedula = models.CharField(max_length=8)
+    pro_vto_libreta = models.DateField(null=True, blank=True) 
+    pro_telefono = models.CharField(max_length=9) 
+    pro_email = models.EmailField(max_length=35, null=True, blank=True) 
+    pro_descripción = models.TextField(max_length=500) 
+    ter_matricula = models.CharField(max_length=7, null=True, blank=True)
+    ter_aseguradora = models.CharField(max_length=30, null=True, blank=True) 
+    ter_propietario = models.BooleanField()
+    ter_nombre_conductor = models.CharField(max_length=30, null=True, blank=True)
+    ter_cedula_conductor = models.CharField(max_length=8, null=True, blank=True)
+    ter_telefono_conductor = models.CharField(max_length=9, null=True, blank=True) 
+    usuario = models.ForeignKey('Usuario',on_delete=models.CASCADE,)
+    fecha_mod = models.DateTimeField(default=timezone.now)
 
 
 class XIniClienteForm(forms.ModelForm):

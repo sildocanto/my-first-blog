@@ -1,7 +1,5 @@
 
 
-
-
 # BBDD impacto cambios 
 $ python manage.py makemigrations denuncia
 $ python manage.py migrate denuncia
@@ -10,8 +8,6 @@ $ python manage.py migrate denuncia
 $ python manage.py createsuperuser
 
 
-<<<<<<< HEAD
-=======
 
 # Uso Git
 # Commit local
@@ -25,4 +21,8 @@ $ git push -u origin master
 # Subir a Server PythonAnywhere (Desde una consola bash)
 1) $ git fetch
 2) $ git pull
->>>>>>> eed97789f87c7b6aa94e8eac792c8d2f8cd9f672
+
+# Si se quiere una copia limpia en local:
+1) $ git reset --hard
+2) $ git pull
+

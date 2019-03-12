@@ -1,0 +1,17 @@
+{% extends 'cliente/base.html' %}
+
+{% block content %}
+    <div class="poliza">
+
+    	<h3>{{ poliza.cliente.nombre }}</h3>
+    	<h4>{{ poliza.cliente.vehiculo.matricula }}</h4>
+
+    	<p>
+
+    	<h1>Hay heridos ? </h1>
+
+        <a class="btn btn-default" href="{% url 'cliente_hayTercero' pk=poliza.nro_poliza %}">No</a>   
+        <a class="btn btn-default" href="{% url '911' %}">Si</a>  
+
+    </div>
+{% endblock %}
