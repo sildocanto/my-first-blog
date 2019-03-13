@@ -75,16 +75,35 @@ def cliente_911(request):
 def cliente_terceroData(request,pk):
     poliza = get_object_or_404(Poliza, nro_poliza=pk)
     if request.method == "POST":
-        return redirect('poliza_detail', pk)
+        form = TerceroDataForm(request.POST)
+        if form.is_valid():
+            ter_matricula = form.cleaned_data['ter_matricula']
+            args = {'pk':pk, 'ter_matricula':ter_matricula}
+            return redirect('cliente_conductorData')
+            #return redirect('cliente_conductorData', pk)
     else:
         return render(request, 'cliente/cliente_terceroData.html', {'poliza': poliza})
-#        form = TerceroDataForm()
-#        return render(request, 'cliente/cliente_terceroData.html', {'form': form})
-        
-     
+#        return render(request, 'cliente/cliente_terceroData.html')
+
+def cliente_conductorData(request):
+##    poliza = get_object_or_404(Poliza, nro_poliza=pk)
+    if request.method == "POST":
+        form = TerceroDataForm(request.POST)
+        if form.is_valid():
+            post = form.save(commit=False)
+            pk = request.nro_poliza
+            ter_matricula = request.ter_matricula
+       #     post.author = request.user
+       #     post.published_date = timezone.now()
+         #   post.save()
+            
+            return redirect('poliza_detail', {'from':form})
+    else:
+##        return render(request, 'cliente/cliente_conductorData.html', {'poliza': poliza})        
+        return render(request, 'cliente/cliente_conductorData.html')             
 
 
-#def cliente_denuncia(request):
+# def cliente_denuncia(request):
 #    if request.method == "POST":
 #        form = IniClienteForm(request.POST)
 #        pk = request.POST.get("cedula", "")

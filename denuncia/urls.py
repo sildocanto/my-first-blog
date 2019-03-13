@@ -13,6 +13,8 @@ urlpatterns = [
     path('cliente/L911/', views.cliente_911, name='911'), 
     path('cliente/<str:pk>/ht/', views.cliente_hayTercero, name='cliente_hayTercero'), 
     path('cliente/<str:pk>/td/', views.cliente_terceroData, name='cliente_terceroData'), 
+##    path('cliente/<str:pk>/cd/', views.cliente_conductorData, name='cliente_conductorData'), 
+    path('cliente/cd/', views.cliente_conductorData, name='cliente_conductorData'), 
 
     path('estado/', views.estado_list, name='estado_list'),
     path('estado/<int:pk>/', views.estado_detail, name='estado_detail'),
