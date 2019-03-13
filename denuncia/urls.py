@@ -35,10 +35,10 @@ urlpatterns = [
     path('incidente/<int:pk>/del/', views.incidente_delete, name='incidente_delete'),
 
     path('poliza/', views.poliza_list, name='poliza_list'),
-    path('poliza/new/', views.poliza_new, name='poliza_new'),   
-    path('poliza/<str:pk>', views.poliza_detail, name='poliza_detail'),  
+    path('poliza/new/', views.poliza_new, name='poliza_new'),    
+    path('poliza/<str:pk>/', views.poliza_detail, name='poliza_detail'),
     path('poliza/<str:pk>/edit/', views.poliza_edit, name='poliza_edit'),
-    path('poliza<str:pk>/del/', views.poliza_delete, name='poliza_delete'),
+    path('poliza/<str:pk>/del/', views.poliza_delete, name='poliza_delete'),
 
     path('usuario/', views.usuario_list, name='usuario_list'),
     path('usuario/<int:pk>/', views.usuario_detail, name='usuario_detail'),

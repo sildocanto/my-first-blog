@@ -4,7 +4,7 @@ from denuncia.models import *
 class ClienteForm(forms.ModelForm):
     class Meta:
         model = Cliente
-        fields = ('cedula', 'nombre','vehiculo',)
+        fields = ('cedula', 'nombre', 'vehiculo',)
 
 class IniClienteForm(forms.Form):
 	cedula = forms.CharField(max_length=100)
@@ -61,7 +61,7 @@ class VehiculoForm(forms.ModelForm):
 class IncidenteForm(forms.ModelForm):
     class Meta:
         model = Incidente
-        fields = ('nro_incidente','poliza','hay_heridos','hay_terceros','fecha_incidente','estado','pro_nombre','pro_cedula','pro_vto_libreta','pro_telefono','pro_email','pro_descripción','ter_matricula','ter_aseguradora','ter_propietario','ter_nombre_conductor','ter_cedula_conductor','ter_telefono_conductor','usuario','fecha_mod')
+        fields = ('nro_incidente', 'poliza', 'hay_heridos', 'hay_terceros', 'fecha_incidente', 'estado', 'pro_nombre', 'pro_cedula', 'pro_vto_libreta', 'pro_telefono', 'pro_email', 'pro_descripción', 'ter_matricula', 'ter_aseguradora', 'ter_propietario', 'ter_nombre_conductor', 'ter_cedula_conductor', 'ter_telefono_conductor', 'usuario', 'fecha_mod')
 
 
 class PolizaForm(forms.ModelForm):
