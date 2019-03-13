@@ -26,8 +26,6 @@ def cliente_edit(request,pk):
         form = ClienteForm(request.POST, instance=cliente)
         if form.is_valid():
             cliente = form.save(commit=False)
-         #   post.author = request.user
-         #   post.published_date = timezone.now()
             cliente.save()
             return redirect('cliente_detail', pk=cliente.cedula)
     else:
@@ -75,14 +73,15 @@ def cliente_911(request):
     return render(request, 'cliente/911.html') 
 
 def cliente_terceroData(request,pk):
+    poliza = get_object_or_404(Poliza, nro_poliza=pk)
     if request.method == "POST":
-        form = TerceroDataForm() 
-        poliza = get_object_or_404(Poliza, nro_poliza=pk)
-
-    else: 
-        form = TerceroDataForm()        
-    return render(request, 'cliente/cliente_terceroData.html', {'poliza': poliza})
-
+        return redirect('poliza_detail', pk)
+    else:
+        return render(request, 'cliente/cliente_terceroData.html', {'poliza': poliza})
+#        form = TerceroDataForm()
+#        return render(request, 'cliente/cliente_terceroData.html', {'form': form})
+        
+     
 
 
 #def cliente_denuncia(request):
@@ -99,13 +98,6 @@ def cliente_terceroData(request,pk):
 #    else:
 #        form = IniClienteForm()
 #    return render(request, 'cliente/cliente_intro.html', {'form': form})  
-
-
-
-
-
-
-
 
 
 

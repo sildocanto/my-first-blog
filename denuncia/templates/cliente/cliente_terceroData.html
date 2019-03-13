@@ -3,21 +3,24 @@
 {% block content %}
     <div class="poliza">
 
-    	<h1>xxxxxxx</h1>>
-    	<!--h3>{{ poliza.cliente.nombre }}</h3>
-    	<h4>{{ poliza.cliente.vehiculo.matricula }}</h4>
+    	<h1>Datos de Tercero</h1>
 
-    	<p>
+        
 
-    	<h1>Hay <b>Terceros</b> involucrados:  ? </h1>
+        <form method="POST" class="post-form">{% csrf_token %}
+            {{ poliza.nro_poliza }}<br>
 
-        <a class="btn btn-default" href="{% url 'cliente_detail' pk=poliza.nro_poliza %}">No</a>   
-        <a class="btn btn-default" href="{% url '911' %}">Si</a-->  
+            <input type="hidden" id="nro_poliza" name="nro_poliza" value={{ poliza.nro_poliza }}>
 
-     	<form method="POST" class="post-form">{% csrf_token %}
-        	{{ form.as_p }}
-        	<button type="submit" class="save btn btn-default">Guardar</button>
-    	</form>	
+            <label>Matricula</label><input type="text" name="ter_matricula"><br>
+            <label>Aseguradora</label><input type="text" name="ter_aseguradora"><br>
+            <label>Propietario</label><input type="text" name="ter_propietario"><br>
+            <label>Conductor</label><input type="text" name="ter_nombre_conductor"><br>
+            <label>CI Conductor</label><input type="text" name="ter_cedula_conductor"><br>
+            <label>Telefono</label><input type="text" name="tter_telefono_conductor"><br>
+
+            <button type="submit" class="save btn btn-default">Guardar</button>
+        </form> 
 
     </div>
 {% endblock %}
