@@ -5,8 +5,12 @@
 
     	<h1>Datos de Conductor</h1>
 
-    	 {{ arg.nro_poliza }}
+         {{ form.ter_matricula }}
+          {{ poliza.nro_poliza }}
 
+        {{ form.ter_aseguradora }}    
+
+            {{ form.nro_poliza }}
 
         <form method="POST" class="post-form">{% csrf_token %}
             {{ poliza.nro_poliza }}<br>

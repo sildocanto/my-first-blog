@@ -15,6 +15,7 @@ urlpatterns = [
     path('cliente/<str:pk>/td/', views.cliente_terceroData, name='cliente_terceroData'), 
 ##    path('cliente/<str:pk>/cd/', views.cliente_conductorData, name='cliente_conductorData'), 
     path('cliente/cd/', views.cliente_conductorData, name='cliente_conductorData'), 
+    path('cliente/<str:pk>/fn/', views.cliente_fin, name='cliente_fin'), 
 
     path('estado/', views.estado_list, name='estado_list'),
     path('estado/<int:pk>/', views.estado_detail, name='estado_detail'),

@@ -10,11 +10,11 @@
         <form method="POST" class="post-form">{% csrf_token %}
             {{ poliza.nro_poliza }}<br>
 
-            <input type="hidden" id="nro_poliza" name="nro_poliza" value={{ poliza.nro_poliza }}>
+            <input type="hidden" id="nro_poliza" name="nro_poliza" value='{{ poliza.nro_poliza }}' >
 
             <label>Matricula</label><input type="text" name="ter_matricula"><br>
             <label>Aseguradora</label><input type="text" name="ter_aseguradora"><br>
-            <label>Propietario</label><input type="text" name="ter_propietario"><br>
+            <label>Es Propietario?</label><input type="checkbox" checked='true' name="ter_propietario"><br>
             <label>Conductor</label><input type="text" name="ter_nombre_conductor"><br>
             <label>CI Conductor</label><input type="text" name="ter_cedula_conductor"><br>
             <label>Telefono</label><input type="text" name="ter_telefono_conductor"><br>

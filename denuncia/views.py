@@ -72,14 +72,47 @@ def cliente_hayTercero(request,pk):
 def cliente_911(request):
     return render(request, 'cliente/911.html') 
 
+def Xcliente_terceroData(request,pk):
+    poliza = get_object_or_404(Poliza, nro_poliza=pk)
+    if request.method == "POST":
+        form = IncidenteForm(request.POST)
+        if form.is_valid():
+            incidente = form.save(commit=False)
+
+            poliza = poliza
+            hay_heridos = False
+            hay_terceros = True
+            fecha_incidente = "01/01/1900"
+            estado = 1
+            pro_nombre = "x"
+            pro_cedula = "x"
+            pro_vto_libreta = "01/01/1900"
+            pro_telefono = "x"
+            pro_email = "x"
+            pro_descripción = "x"
+            ter_matricula = request.ter_matricula 
+            ter_aseguradora = request.ter_aseguradora
+            ter_propietario = request.ter_propietario
+            ter_nombre_conductor = request.ter_nombre_conductor
+            ter_cedula_conductor = request.ter_cedula_conductor
+            ter_telefono_conductor = request.ter_telefono_conductor
+            usuario = "1"
+            fecha_mod = "01/01/1900"  
+
+            incidente.save()
+            return render(request, 'cliente/cliente_conductorData.html', {'form': form})
+    else:
+        return render(request, 'cliente/cliente_terceroData.html', {'poliza': poliza})
+
 def cliente_terceroData(request,pk):
     poliza = get_object_or_404(Poliza, nro_poliza=pk)
     if request.method == "POST":
         form = TerceroDataForm(request.POST)
         if form.is_valid():
-            ter_matricula = form.cleaned_data['ter_matricula']
-            args = {'pk':pk, 'ter_matricula':ter_matricula}
-            return redirect('cliente_conductorData')
+#            ter_matricula = form.cleaned_data['ter_matricula']
+ #           args = {'pk':pk, 'ter_matricula':ter_matricula}
+            nro_poliza = poliza
+            return render(request, 'cliente/cliente_conductorData.html', {'form': form})
             #return redirect('cliente_conductorData', pk)
     else:
         return render(request, 'cliente/cliente_terceroData.html', {'poliza': poliza})
@@ -93,15 +126,19 @@ def cliente_conductorData(request):
             post = form.save(commit=False)
             pk = request.nro_poliza
             ter_matricula = request.ter_matricula
+            nro_poliza = form.nro_poliza
        #     post.author = request.user
        #     post.published_date = timezone.now()
          #   post.save()
             
-            return redirect('poliza_detail', {'from':form})
+            return redirect('cliente_fin', {'from':form})
     else:
 ##        return render(request, 'cliente/cliente_conductorData.html', {'poliza': poliza})        
         return render(request, 'cliente/cliente_conductorData.html')             
 
+def cliente_fin(request,pk):
+    incidente = get_object_or_404(Incidente, nro_incidente=pk)  
+    return render(request, 'cliente/cliente_fin.html', {'incidente': incidente}) 
 
 # def cliente_denuncia(request):
 #    if request.method == "POST":

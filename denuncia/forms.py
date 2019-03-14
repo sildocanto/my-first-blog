@@ -11,6 +11,7 @@ class IniClienteForm(forms.Form):
 
 
 class TerceroDataForm(forms.Form):
+    nro_poliza = forms.CharField(max_length=8)
     ter_matricula = forms.CharField(max_length=7)
     ter_aseguradora = forms.CharField(max_length=30) 
     ter_propietario = forms.BooleanField()
