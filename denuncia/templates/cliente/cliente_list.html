@@ -1,0 +1,22 @@
+{% extends 'cliente/base.html' %}
+
+{% block content %}
+
+	<table class='table'>
+		<tr>
+			<th>Vehiculo</th><th>Nombre</th><th>Cedula</th>
+		</tr>
+		{% for cliente in clientes %} 
+			<tr>
+				<td> <a href="{% url 'cliente_detail' pk=cliente.cedula %}">{{ cliente.vehiculo.matricula }}</a></td>
+				<td>{{ cliente.nombre }} </td>
+				<td>{{ cliente.cedula }} </td>
+				
+			</tr>	
+		{% endfor %}			
+	</table>	
+	
+	
+{% endblock %}
+
+

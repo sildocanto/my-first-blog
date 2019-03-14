@@ -1,0 +1,15 @@
+{% extends 'cliente/base.html' %}
+
+{% block content %}
+    <div class="cliente">
+        {% if cliente.cedula %}
+            <div class="date">
+                {{ cliente.cedula}}
+            </div>        
+        {% endif %}
+        <a class="btn btn-default" href="{% url 'cliente_edit' pk=cliente.cedula %}"><span class="glyphicon glyphicon-pencil"></span></a>
+        <a class="btn btn-default" href="{% url 'cliente_delete' pk=cliente.cedula %}"><span class="glyphicon glyphicon-trash"></span></a>        
+        <h1>{{ cliente.cedula }}</h1>
+        <p>{{ cliente.nombre|linebreaksbr }}</p>
+    </div>
+{% endblock %}
