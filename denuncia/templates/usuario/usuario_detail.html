@@ -11,5 +11,6 @@
         <a class="btn btn-default" href="{% url 'usuario_delete' pk=usuario.usuario_id %}"><span class="glyphicon glyphicon-trash"></span></a>        
         <h1>{{ usuario.usuario_id }}</h1>
         <p>{{ usuario.nombre|linebreaksbr }}</p>
+         <p>{{ usuario.clave|linebreaksbr }}</p>
     </div>
 {% endblock %}

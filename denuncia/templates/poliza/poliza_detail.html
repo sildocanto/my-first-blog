@@ -10,6 +10,8 @@
         <a class="btn btn-default" href="{% url 'poliza_edit' pk=poliza.nro_poliza %}"><span class="glyphicon glyphicon-pencil"></span></a>
         <a class="btn btn-default" href="{% url 'poliza_delete' pk=poliza.nro_poliza %}"><span class="glyphicon glyphicon-trash"></span></a>        
         <h1>{{ poliza.nro_poliza }}</h1>
-        <p>{{ poliza.nombre|linebreaksbr }}</p>
+        <p>{{ poliza.vehiculo.matricula|linebreaksbr }}</p>
+        <p>{{ poliza.cliente.nombre|linebreaksbr }}</p>
+        <p>{{ poliza.cliente.cedula|linebreaksbr }}</p>
     </div>
 {% endblock %}

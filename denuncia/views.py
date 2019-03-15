@@ -238,7 +238,7 @@ def poliza_new(request):
         if form.is_valid():
             poliza = form.save(commit=False)
             poliza.save()
-            return redirect('poliza_list', pk=poliza.nro_poliza)
+            return redirect('poliza_detail', pk=poliza.nro_poliza)
     else:
         form = PolizaForm()
     return render(request, 'poliza/poliza_edit.html', {'form': form})
