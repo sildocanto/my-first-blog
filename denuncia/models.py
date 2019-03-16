@@ -55,7 +55,7 @@ class Incidente(models.Model):
     estado = models.ForeignKey('Estado',on_delete=models.CASCADE,)
     pro_nombre = models.CharField(max_length=30)
     pro_cedula = models.CharField(max_length=8)
-    pro_vto_libreta = models.DateField(null=True, blank=True) 
+    pro_vto_libreta = models.DateField(blank=True, null=True)
     pro_telefono = models.CharField(max_length=9) 
     pro_email = models.EmailField(max_length=35, null=True, blank=True) 
     pro_descripción = models.TextField(max_length=500) 
