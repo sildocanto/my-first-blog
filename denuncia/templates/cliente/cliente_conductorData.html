@@ -3,33 +3,45 @@
 {% block content %}
     <div class="poliza">
 
-    	<h1>Datos de Conductor</h1>
+        <h1>Datos del Conductor</h1>
 
-         {{ form.ter_matricula }}
-          {{ poliza.nro_poliza }}
 
-        {{ form.ter_aseguradora }}    
-
-            {{ form.nro_poliza }}
+        {{ poliza.nro_poliza }} 
+        <h3>{{ poliza.cliente.nombre }}</h3>
 
         <form method="POST" class="post-form">{% csrf_token %}
-            {{ poliza.nro_poliza }}<br>
 
-            <input type="hidden" id="nro_poliza" name="nro_poliza" value={{ poliza.nro_poliza }}>
+            {{ form.nro_incidente.as_hidden  }}      
 
-            <label>Nombre Conductor</label><input type="text" name="pro_nombre"><br>
-            <label>Cédula</label><input type="number" name="pro_cedula"><br>
-            <label>Vencimiento Libreta</label><input type="date" name="pro_vto_libreta"><br>
-            <label>Teléfono</label><input type="tel" name="pro_telefono"><br>
-            <label>Email</label><input type="email" name="pro_email"><br>
-            <!--label>Descripción del siniestro</label><input type="text" name="pro_descripción"><br-->
-            <label>Descripción del siniestro</label><textarea name="pro_descripción" cols="40" rows="5"></textarea><br>
+            {{ form.poliza }} 
+
+            <p>{{ form.hay_heridos }} <label> Hay Heridos</label>
+            <p>{{ form.hay_terceros }} <label> Hay Terceros involucrados</label>
+            <p><label>Fecha y Hora de incidente</label>{{ form.fecha_incidente }} 
+            <p><label>Nombre Conductor</label>{{ form.pro_nombre }} 
+            </p><p><label>Cedula Conductor</label>{{ form.pro_cedula }} 
+            <p><label>Vencimiento licencia conducir</label>{{ form.pro_vto_libreta }} 
+            <p><label>Telefono</label>{{ form.pro_telefono }} 
+            <p><label>Email</label>{{ form.pro_email }} 
+            <p><label>Descripcion del incidente</label>{{ form.pro_descripción }} 
+
+
+                    
+            {{ form.ter_matricula.as_hidden  }} 
+            {{ form.ter_aseguradora.as_hidden  }} 
+            {{ form.ter_propietario.as_hidden  }} 
+            {{ form.ter_nombre_conductor.as_hidden  }} 
+            {{ form.ter_cedula_conductor.as_hidden  }} 
+            {{ form.ter_telefono_conductor.as_hidden  }} 
+
+            {{ form.estado }}
+                 
+            {{ form.usuario.as_hidden }} 
+            {{ form.fecha_mod.as_hidden }} 
+
             <button type="submit" class="save btn btn-default">Guardar</button>
         </form> 
 
     </div>
+
 {% endblock %}
-
-
-
-
