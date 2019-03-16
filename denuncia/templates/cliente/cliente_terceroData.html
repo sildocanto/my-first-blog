@@ -1,14 +1,47 @@
-{% extends 'cliente/base.html' %}
+{% extends 'denuncia/base.html' %}
 
 {% block content %}
     <div class="poliza">
 
     	<h1>Datos de Tercero</h1>
 
-        
+
+        {{ poliza.nro_poliza }} 
+        <h3>{{ poliza.cliente.nombre }}</h3>
 
         <form method="POST" class="post-form">{% csrf_token %}
-            {{ poliza.nro_poliza }}<br>
+
+            {{ form.nro_incidente.as_hidden  }}      
+
+            {{ form.poliza }} 
+
+            
+            {{ form.hay_heridos }} 
+            {{ form.hay_terceros }} 
+            {{ form.fecha_incidente }} 
+            {{ form.estado }} 
+            {{ form.pro_nombre }} 
+            {{ form.pro_cedula }} 
+            {{ form.pro_vto_libreta }} 
+            {{ form.pro_telefono }} 
+            {{ form.pro_email }} 
+            {{ form.pro_descripción }} 
+
+            {% if form.hay_terceros  %}
+                {{ form.ter_matricula }} 
+                {{ form.ter_aseguradora }} 
+                {{ form.ter_propietario }} 
+                {{ form.ter_nombre_conductor }} 
+                {{ form.ter_cedula_conductor }} 
+                {{ form.ter_telefono_conductor }} 
+            {% endif %}  
+              
+            {{ form.usuario }} 
+            {{ form.fecha_mod }} 
+
+            <!--label>Matricula</label>{{ form.ter_matricula}}
+
+  {{ form.as_p }}
 
             <input type="hidden" id="nro_poliza" name="nro_poliza" value='{{ poliza.nro_poliza }}' >
 
@@ -17,10 +50,14 @@
             <label>Es Propietario?</label><input type="checkbox" checked='true' name="ter_propietario"><br>
             <label>Conductor</label><input type="text" name="ter_nombre_conductor"><br>
             <label>CI Conductor</label><input type="text" name="ter_cedula_conductor"><br>
-            <label>Telefono</label><input type="text" name="ter_telefono_conductor"><br>
+            <label>Telefono</label><input type="text" name="ter_telefono_conductor"><br-->
+
+           
 
             <button type="submit" class="save btn btn-default">Guardar</button>
         </form> 
 
     </div>
 {% endblock %}
+
+

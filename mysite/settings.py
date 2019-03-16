@@ -25,7 +25,7 @@ SECRET_KEY = 'y_cr9d9#x&#b9dn%i8ope6ehudej)-6!(h&d)7fr8pix&bo$3o'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'sildocanto.pythonanywhere.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'sildocanto.pythonanywhere.com','0.0.0.0']
 
 
 # Application definition
@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles', 
     'denuncia',
+    'django_extensions',
 ]
 
 MIDDLEWARE = [
