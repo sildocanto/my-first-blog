@@ -13,7 +13,7 @@ $ python manage.py createsuperuser
 # Commit local
 1) $ git status 
 2) $ git add --all .
-3) $ git commit -m “ingresar comentario”
+3) $ gingresar comentario”
 
 # Commit en Github
 $ git push -u origin master

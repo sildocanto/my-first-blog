@@ -9,7 +9,6 @@
         {% endif %}
         <a class="btn btn-default" href="{% url 'estado_edit' pk=estado.id %}"><span class="glyphicon glyphicon-pencil"></span></a>
         <a class="btn btn-default" href="{% url 'estado_delete' pk=estado.id %}"><span class="glyphicon glyphicon-trash"></span></a>        
-        <h1>{{ estado.id }}</h1>
-        <p>{{ estado.tipo|linebreaksbr }}</p>
+        <h1>{{ estado.tipo }}</h1>
     </div>
 {% endblock %}

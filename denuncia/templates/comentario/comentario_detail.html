@@ -9,15 +9,15 @@
         {% endif %}
         <a class="btn btn-default" href="{% url 'comentario_edit' pk=comentario.id %}"><span class="glyphicon glyphicon-pencil"></span></a>
         <a class="btn btn-default" href="{% url 'comentario_delete' pk=comentario.id %}"><span class="glyphicon glyphicon-trash"></span></a>        
-        <h1>{{ comentario.id }}</h1>
+        <h1>{{ comentario.incidente.poliza.vehiculo.matricula }}</h1>
         <p>{{ comentario.fecha|linebreaksbr }}</p>
         <p>{{ comentario.incidente.nro_incidente|linebreaksbr }}</p>
         <p>{{ comentario.incidente.estado|linebreaksbr }}</p>
-        <p>{{ ccomentario.incidente.poliza.nro_poliza|linebreaksbr }}</p>
-        <p>{{ comentario.incidente.poliza.vehiculo.matricula|linebreaksbr }}</p>
+        <p>{{ comentario.incidente.poliza.nro_poliza|linebreaksbr }}</p>
         <p>{{ comentario.incidente.poliza.cliente.nombre|linebreaksbr }}</p>
         <p>{{ ccomentario.incidente.poliza.cliente.cedula|linebreaksbr }}</p>
         <p>{{ comentario.incidente.usuario.nombre|linebreaksbr }}</p>
         <p>{{ comentario.comentario|linebreaksbr }}</p>
+        <p>{{ comentario.incidente.fecha_mod|linebreaksbr }}</p>
     </div>
 {% endblock %}
