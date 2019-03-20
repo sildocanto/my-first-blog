@@ -18,15 +18,13 @@
             <div class="row">
                 <div class="col-md-8">
                     <h1><img src="{% static 'css/boton emergencia 911.png' %}" alt="logo" height="150" width="150"  margin-right:"15px"><a>  Llamar de inmediato al 911.</a></h1>
-                    <h1><img src="{% static 'css/0800.jpg' %}" alt="logo" height="100" width="150"  margin-right:"15px"><a> Llamar al 0800 y realiza la denuncia.</a></h3>
-                    <h3>- Brindar asistencia a las personas lesionadas (de acuerdo a sus posibilidades).</h3>
-                    <h3>- Quedarse en el lugar del accidente hasta que se presente autoridades competentes.</h1>
-                    <h3>- Luego nos comunicaremos con usted.</h3>
-
-                    <form method="POST" class="post-form">{% csrf_token %}
-                          
-                      <button type="submit" class="save btn btn-default">Finalizar</button>
-                    </form>
+                    <h1><img src="{% static 'css/0800.jpg' %}" alt="logo" height="100" width="150"  margin-right:"15px"><a> Realizar la denuncia.</a></h4>
+                    <h4>- Brindar asistencia a las personas lesionadas (de acuerdo a sus posibilidades).</h4>
+                    <h4>- Quedarse en el lugar del accidente hasta que se presente autoridades competentes.</h4>
+                    <h4>- Luego nos comunicaremos con usted.</h4>
+                    <p align="right"> 
+                    <a class="btn btn-default" href="{% url 'cliente_intro' %}">Finalizar</a>  
+                    </p>
                 </div>
             </div>
         </div>

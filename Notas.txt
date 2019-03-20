@@ -11,11 +11,12 @@ $ python manage.py createsuperuser
 
 # Uso Git
 # Commit local
+0) $ git pull
 1) $ git status 
 2) $ git add --all .
-3) $ gingresar comentario”
+3) $ git commit -m “ingresar comentario”
 
-# Commit en Github
+4) Commit en Github
 $ git push -u origin master
 
 # Subir a Server PythonAnywhere (Desde una consola bash)

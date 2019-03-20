@@ -4,7 +4,20 @@
     <div class="incidente">
         Su incidente fue registrado con el número: <b>#{{ incidente.nro_incidente}}</b> 
         <p>
-        Nos comunicaremos con usted a la brevedad.
+        <body>
+        	<div id="logo-container">
+        		<img class="center-block" src="/static/denuncia realizada con exito.png" id="centro" />
+        		<form action="reservar.php" name="mireserva" id="mireserva" method="POST" style="text-align:center">
+    				
+
+				</form>
+				<form action="confirmar.php" name="miconfirmar" id="miconfirmar" method="POST" style="text-align:center">
+    				
+    				<a class="btn btn-default" href="{% url 'cliente_intro' %}">Finalizar</a> 
+			</form>
+        	</div>
+        </body>
 
     </div>
+
 {% endblock %}
