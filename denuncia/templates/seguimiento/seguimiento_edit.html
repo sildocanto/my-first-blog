@@ -1,7 +1,7 @@
-{% extends 'cliente/base.html' %}
+{% extends 'seguimiento/base.html' %}
 
 {% block content %}
-    <h1>Nuevo Cliente</h1>
+    <h1>Nuevo Seguimiento</h1>
     <form method="POST" class="post-form">{% csrf_token %}
         {{ form.as_p }}
         <button type="submit" class="save btn btn-default">Guardar</button>

@@ -1,7 +1,7 @@
 {% extends 'denuncia/base.html' %}
 
 {% block content %}
-    <h1>Denuncia de Siniestro</h1>
+    <h1>Siniestro Vehicular</h1>
     <form method="POST" class="post-form">{% csrf_token %}
         <label><h3>Cédula</h3> Sin puntos ni guiones: </label>
         {{ form.cedula }} <br>

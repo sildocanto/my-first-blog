@@ -9,8 +9,7 @@
         {% endif %}
         <a class="btn btn-default" href="{% url 'archivo_edit' pk=archivo.id %}"><span class="glyphicon glyphicon-pencil"></span></a>
         <a class="btn btn-default" href="{% url 'archivo_delete' pk=archivo.id %}"><span class="glyphicon glyphicon-trash"></span></a>        
-        <h1>{{ archivo.id }}</h1>
-        <p>{{ archivo.link|linebreaksbr }}</p>
+        <h1>{{ archivo.link }}</h1>
         <p>{{ archivo.incidente.nro_incidente|linebreaksbr }}</p>
         <p>{{ archivo.incidente.poliza.nro_poliza|linebreaksbr }}</p>
         <p>{{ archivo.incidente.poliza.vehiculo.matricula|linebreaksbr }}</p>

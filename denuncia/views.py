@@ -367,4 +367,42 @@ def vehiculo_list(request):
 
 def vehiculo_detail(request,pk):
     vehiculo = get_object_or_404(Vehiculo, matricula=pk)
-    return render(request, 'vehiculo/vehiculo_detail.html', {'vehiculo': vehiculo})   
+    return render(request, 'vehiculo/vehiculo_detail.html', {'vehiculo': vehiculo})  
+
+
+def seguimiento_new(request):
+    if request.method == "POST":
+        form = IncidenteForm(request.POST)
+        if form.is_valid():
+            incidente = form.save(commit=False)
+            incidente.save()
+            return redirect('seguimiento_detail', pk=incidente.nro_incidente)
+    else:
+        form = IncidenteForm()
+    return render(request, 'seguimiento/seguimiento_edit.html', {'form': form})
+
+def seguimiento_edit(request,pk):
+    incidente = get_object_or_404(Incidente, nro_incidente=pk)
+    if request.method == "POST":
+        form = IncidenteForm(request.POST, instance=incidente)
+        if form.is_valid():
+            incidente = form.save(commit=False)
+            incidente.save()
+            return redirect('seguimiento_detail', pk=incidente.nro_incidente)
+    else:
+        form = IncidenteForm(instance=incidente)
+    return render(request, 'seguimiento/seguimiento_edit.html', {'form': form})    
+
+def seguimiento_delete(request,pk):
+    incidente = get_object_or_404(Incidente, nro_incidente=pk)
+    incidente.delete()
+    return redirect('seguimiento_list', {'incidente': incidente}) 
+
+def seguimiento_list(request):
+    incidentes = Incidente.objects.order_by('nro_incidente')
+    return render(request, 'seguimiento/seguimiento_list.html', {'incidentes': incidentes})
+
+def seguimiento_detail(request,pk):
+    incidente = get_object_or_404(Incidente, nro_incidente=pk)
+    return render(request, 'seguimiento/seguimiento_detail.html', {'incidente': incidente})      
+

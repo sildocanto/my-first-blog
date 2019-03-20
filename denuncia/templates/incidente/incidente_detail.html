@@ -9,15 +9,16 @@
         {% endif %}
         <a class="btn btn-default" href="{% url 'incidente_edit' pk=incidente.nro_incidente %}"><span class="glyphicon glyphicon-pencil"></span></a>
         <a class="btn btn-default" href="{% url 'incidente_delete' pk=incidente.nro_incidente %}"><span class="glyphicon glyphicon-trash"></span></a>        
-        <h1>{{ incidente.nro_incidente }}</h1>
+        <h1>{{ incidente.poliza.vehiculo.matricula|linebreaksbr }}</h1>
+        <p>{{ incidente.poliza.nro_poliza }}</p>
+        <p>{{ incidente.poliza.cliente.nombre|linebreaksbr }}</p>
+        <p>{{ incidente.poliza.cliente.cedula|linebreaksbr }}</p>
         <p>{{ incidente.estado.tipo|linebreaksbr }}</p>
         <p>{{ incidente.fecha_incidente|linebreaksbr }}</p>
-        <p>{{ incidente.poliza.nro_poliza|linebreaksbr }}</p>
-        <p>{{ iincidente.poliza.vehiculo.matricula|linebreaksbr }}</p>
         <p>{{ incidente.pro_nombre|linebreaksbr }}</p>
         <p>{{ incidente.pro_cedula|linebreaksbr }}</p>
-        <p>{{ iincidente.pro_vto_libreta|linebreaksbr }}</p>
-        <p>{{ iincidente.pro_telefono|linebreaksbr }}</p>
+        <p>{{ incidente.pro_vto_libreta|linebreaksbr }}</p>
+        <p>{{ incidente.pro_telefono|linebreaksbr }}</p>
         <p>{{ incidente.pro_email|linebreaksbr }}</p>
         <p>{{ incidente.pro_descripción|linebreaksbr }}</p>
     </div>

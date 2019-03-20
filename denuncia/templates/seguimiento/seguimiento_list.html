@@ -1,0 +1,29 @@
+{% extends 'seguimiento/base.html' %}
+
+{% block content %}
+
+	<table class='table'>
+		<tr>
+			<th>Nro_incidente</th><th>Fecha_incidente</th><th>Estado</th><th>Poliza</th><th>Vehiculo</th><th>Pro_nombre</th><th>Pro_cedula</th><th>Usuario</th><th>Fecha_mod</th>
+		</tr>	
+		{% for incidente in incidentes %} 
+			<tr>
+				<td> <a href="{% url 'seguimiento_detail' pk=incidente.nro_incidente %}">{{ incidente.nro_incidente }}</a></td>
+				<td>{{ incidente.fecha_incidente }} </td>
+				<td>{{ incidente.estado.tipo }} </td>
+				<td>{{ incidente.poliza.nro_poliza }} </td>
+				<td>{{ incidente.poliza.vehiculo.matricula }} </td>
+				<td>{{ incidente.pro_nombre }} </td>
+				<td>{{ incidente.pro_cedula }} </td>
+				<td>{{ incidente.usuario.nombre }} </td>
+				<td>{{ incidente.fecha_mod }} </td>
+
+			</tr>	
+		{% endfor %}			
+	</table>	
+	
+	
+{% endblock %}
+
+
+
