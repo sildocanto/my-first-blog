@@ -3,7 +3,7 @@
 {% block content %}
     <div class="poliza">
 
-    	<h1>Datos de Tercero</h1>
+    	<h1>Datos Conductor</h1>
 
 
         {{ poliza.nro_poliza }} 
@@ -15,44 +15,34 @@
 
             {{ form.poliza }} 
 
-            
-            {{ form.hay_heridos }} 
-            {{ form.hay_terceros }} 
-            {{ form.fecha_incidente }} 
-            {{ form.estado }} 
-            {{ form.pro_nombre }} 
-            {{ form.pro_cedula }} 
-            {{ form.pro_vto_libreta }} 
-            {{ form.pro_telefono }} 
-            {{ form.pro_email }} 
-            {{ form.pro_descripción }} 
+            <p>{{ form.hay_heridos }} <label> Hay Heridos</label>
+            <p>{{ form.hay_terceros }} <label> Hay Terceros involucrados</label>
+            <p><label>Fecha y Hora de incidente</label>{{ form.fecha_incidente }} 
+            <p><label>Nombre Conductor</label>{{ form.pro_nombre }} 
+            </p><p><label>Cedula Conductor</label>{{ form.pro_cedula }} 
+            <p><label>Vencimiento licencia conducir</label>{{ form.pro_vto_libreta }} 
+            <p><label>Telefono</label>{{ form.pro_telefono }} 
+            <p><label>Email</label>{{ form.pro_email }} 
+            <p><label>Descripcion del incidente</label>{{ form.pro_descripción }} 
 
-            {% if form.hay_terceros  %}
-                {{ form.ter_matricula }} 
-                {{ form.ter_aseguradora }} 
-                {{ form.ter_propietario }} 
-                {{ form.ter_nombre_conductor }} 
-                {{ form.ter_cedula_conductor }} 
-                {{ form.ter_telefono_conductor }} 
-            {% endif %}  
-              
-            {{ form.usuario }} 
-            {{ form.fecha_mod }} 
+            <div>    
+            <p>
+                <h3 class="tercero">Datos Tercero Involucrado:</h3>
+            </p>    
+            <p><b>
+            <p><label class="tercero">Matricula</label>{{ form.ter_matricula }} 
+            <p><label class="tercero">Aseguradora</label>{{ form.ter_aseguradora }} 
+            <p><label class="tercero">Es Propietario?</label>{{ form.ter_propietario }} 
+            <p><label class="tercero">Nombre Conductor</label>{{ form.ter_nombre_conductor }} 
+            <p><label class="tercero">Cedula Conductor</label>{{ form.ter_cedula_conductor }} 
+            <p><label class="tercero">Telefono</label>{{ form.ter_telefono_conductor }} 
+            </b></p>   
+            </div>  
 
-            <!--label>Matricula</label>{{ form.ter_matricula}}
-
-  {{ form.as_p }}
-
-            <input type="hidden" id="nro_poliza" name="nro_poliza" value='{{ poliza.nro_poliza }}' >
-
-            <label>Matricula</label><input type="text" name="ter_matricula"><br>
-            <label>Aseguradora</label><input type="text" name="ter_aseguradora"><br>
-            <label>Es Propietario?</label><input type="checkbox" checked='true' name="ter_propietario"><br>
-            <label>Conductor</label><input type="text" name="ter_nombre_conductor"><br>
-            <label>CI Conductor</label><input type="text" name="ter_cedula_conductor"><br>
-            <label>Telefono</label><input type="text" name="ter_telefono_conductor"><br-->
-
-           
+            {{ form.estado }}
+                 
+            {{ form.usuario.as_hidden }} 
+            {{ form.fecha_mod.as_hidden }} 
 
             <button type="submit" class="save btn btn-default">Guardar</button>
         </form> 

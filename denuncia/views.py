@@ -78,8 +78,7 @@ def cliente_terceroData(request,pk):
     if request.method == "POST":
         form = IncidenteForm(request.POST)
         if form.is_valid(): 
-            incidente = form.save(commit=False)
-            poliza = poliza.nro_poliza
+            incidente = form.save(commit=False)         
             incidente.save()
             return redirect('incidente_detail', pk=incidente.nro_incidente)
     else:
@@ -100,7 +99,6 @@ def cliente_conductorData(request,pk):
     else:
 ##        return render(request, 'cliente/cliente_conductorData.html', {'poliza': poliza})  
         form = IncidenteForm()     
-        form.nro_poliza = 345 
     return render(request, 'cliente/cliente_conductorData.html', {'form': form,'poliza': poliza})             
 
 #    poliza = get_object_or_404(Poliza, nro_poliza=pk)
@@ -109,23 +107,6 @@ def cliente_conductorData(request,pk):
 def cliente_fin(request,pk):
     incidente = get_object_or_404(Incidente, nro_incidente=pk)  
     return render(request, 'cliente/cliente_fin.html', {'incidente': incidente}) 
-
-# def cliente_denuncia(request):
-#    if request.method == "POST":
-#        form = IniClienteForm(request.POST)
-#        pk = request.POST.get("cedula", "")
-#        try:
-#            cliente = Cliente.objects.get(pk=pk)
-#            if form.is_valid():
-#                return redirect('cliente_detail', pk) 
-#        except Cliente.DoesNotExist:
-#        #    return redirect('cliente_list')      
-#            return render(request, 'cliente/cliente_NoEncontrado.html',) 
-#    else:
-#        form = IniClienteForm()
-#    return render(request, 'cliente/cliente_intro.html', {'form': form})  
-
-
 
 
 def estado_new(request):
