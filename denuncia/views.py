@@ -296,6 +296,7 @@ def archivo_detail(request,pk):
     return render(request, 'archivo/archivo_detail.html', {'archivo': archivo})
 
 
+
 def comentario_new(request):
     if request.method == "POST":
         form = ComentarioForm(request.POST)
@@ -370,6 +371,14 @@ def vehiculo_detail(request,pk):
     return render(request, 'vehiculo/vehiculo_detail.html', {'vehiculo': vehiculo})  
 
 
+
+
+def archivo_getIncidente(request,pk):
+    archivo = get_object_or_404(Archivo, incidente=pk)
+    return render(request, 'archivo/archivo_detail.html', {'archivo': archivo})    
+
+
+
 def seguimiento_new(request):
     if request.method == "POST":
         form = IncidenteForm(request.POST)
@@ -402,7 +411,40 @@ def seguimiento_list(request):
     incidentes = Incidente.objects.order_by('nro_incidente')
     return render(request, 'seguimiento/seguimiento_list.html', {'incidentes': incidentes})
 
+def Xseguimiento_detail(request,pk):
+    incidente = get_object_or_404(Incidente, nro_incidente=pk)
+    archivo = get_object_or_404(Archivo, incidente=pk)
+    comentario = get_object_or_404(Comentario, incidente=pk)
+    return render(request, 'seguimiento/seguimiento_detail.html',
+        dict(
+            {'incidente': incidente,'archivo': archivo,'comentario': comentario},
+        )    
+    
+    ) 
+
+Vehiculo.objects.order_by('matricula')
 def seguimiento_detail(request,pk):
     incidente = get_object_or_404(Incidente, nro_incidente=pk)
-    return render(request, 'seguimiento/seguimiento_detail.html', {'incidente': incidente})      
+    try:
+       # archivo = get_object_or_404(Archivo, incidente=pk)
+        archivos = Archivo.objects.filter(incidente=pk)
+        comentarios = Comentario.objects.filter(incidente=pk)
+        return render(request, 'seguimiento/seguimiento_detail.html',
+            dict(
+                {'incidente': incidente,'archivos': archivos,'comentarios': comentarios},
+            )
+        )    
+    except Comentario.DoesNotExist | Archivo.DoesNotExist: 
+        return render(request, 'seguimiento/seguimiento_detail.html', {'incidente': incidente})          
+    
+
+
+        try:
+            cliente = Cliente.objects.get(pk=pk)
+            if form.is_valid():
+                #return redirect('cliente_detail',pk) 
+                return redirect('cliente_hayHerido',pk)      
+        except Cliente.DoesNotExist:   
+            return render(request, 'cliente/cliente_NoEncontrado.html',) 
+
 

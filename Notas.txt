@@ -1,4 +1,23 @@
+Imágenes para archivos de prueba.
 
+https://photos.app.goo.gl/FNbZyvHLG1PfQwFTA
+
+https://photos.app.goo.gl/hAJhh32oFYyLUgr59
+
+https://photos.app.goo.gl/pK4MDF3mY9pbjydJ6
+
+https://photos.app.goo.gl/1E6VzG9X9tFx4UYE9
+
+https://photos.app.goo.gl/RrnQeA4qjSBnFDHW8
+
+https://photos.app.goo.gl/ttYhGd8QJHRwwS266
+
+https://photos.app.goo.gl/hUm5wMmm3uEemF4B9
+
+
+
+
+———
 
 # BBDD impacto cambios 
 $ python manage.py makemigrations denuncia

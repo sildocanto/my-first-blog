@@ -1,13 +1,7 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" type="text/css" href="css/estilo.css"/>
-        <script type="text/javascript" src="js/cambiarPestanna.js"></script>
-        <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
-        <title></title>
-    </head>
-    <body>
+{% extends 'seguimiento/base.html' %}
+
+{% block content %}
+         
         <div class="contenedor">
             <div class="titulo">MENÚ GESTIÓN</div>
             <div id="pestanas">
@@ -25,24 +19,73 @@
        
             <div id="contenidopestanas">
                 <div id="cpestana1">
-                    HTML, siglas de HyperText Markup Language («lenguaje de marcado de hipertexto»), hace referencia al lenguaje de marcado predominante para la elaboración de páginas web que se utiliza para describir y traducir la estructura y la información en forma de texto, así como para complementar el texto con objetos tales como imágenes. El HTML se escribe en forma de «etiquetas», rodeadas por corchetes angulares (<,>). HTML también puede describir, hasta un cierto punto, la apariencia de un documento, y puede incluir un script (por ejemplo JavaScript), el cual puede afectar el comportamiento de navegadores web y otros procesadores de HTML.
+                   <tr>
+                    <td> <!--a href="{% url 'incidente_detail' pk=incidente.nro_incidente %}"></a--><label>Número de Incidente: {{ incidente.nro_incidente }}</label></td>
+                    <p><label> Fecha incidente: </label> {{ incidente.fecha_incidente }} 
+                    <br></br>
+                    <p><label> Estado: </label> {{ incidente.estado.tipo }} 
+                    <br></br>
+                    <p><label> Póliza: </label> {{ incidente.poliza.nro_poliza }} 
+                    <p><label> Matricula: </label> {{ incidente.poliza.vehiculo.matricula|linebreaksbr }} 
+                    <p><label> Contrantante: </label> {{ incidente.pro_nombre }} 
+                    <p><label> CI: </label> {{ incidente.pro_cedula }} 
+                    <br></br>
+                    <p><label> Chofer: </label> {{ incidente.pro_nombre|linebreaksbr }}
+                    <p><label> CI. Chofer: </label> {{ incidente.pro_cedula|linebreaksbr }}
+                    <p><label> Vto. Libreta: </label> {{ incidente.pro_vto_libreta|linebreaksbr }}
+                    <p><label> Celulcar: </label> {{ incidente.pro_telefono|linebreaksbr }}
+                    <p><label> Correo electrónico: </label> {{ incidente.pro_email|linebreaksbr }}
+                    <br></br>
+                    <p><h2><label> Descripción Siniestro: </label></h2> 
+                    {{ incidente.pro_descripción|linebreaksbr }}
+                    <br></br>
+                    </tr>   
                 </div>
                 <div id="cpestana2">
-                    El nombre hojas de estilo en cascada viene del inglés Cascading Style Sheets, del que toma sus siglas. CSS es un lenguaje usado para definir la presentación de un documento estructurado escrito en HTML o XML2 (y por extensión en XHTML). El W3C (World Wide Web Consortium) es el encargado de formular la especificación de las hojas de estilo que servirán de estándar para los agentes de usuario o navegadores.
+                    {% for archivo in archivos %} 
+                        <td> <a href={{ archivo.link }} target="_blank"> Imagen </a>
+                        <br></br>
+                    {% endfor %}    
+
                 </div>
                 <div id="cpestana3">
-                    JavaScript es un lenguaje de programación interpretado, dialecto del estándar ECMAScript. Se define como orientado a objetos,3 basado en prototipos, imperativo, débilmente tipado y dinámico.
+                    <tr>
+                    <td> <a href="{% url 'incidente_detail' pk=incidente.nro_incidente %}"></a><label>Número de Incidente: {{ incidente.nro_incidente }}</label></td>
+                    <p><label> Estado: </label> {{ incidente.estado.tipo }} </td>
+                    <br></br>
+                    <p><label> Aseguradora: </label> {{ incidente.ter_aseguradora|linebreaksbr }}
+                    <p>
+                    <p><label> Matricula: </label> {{ incidente.ter_matricula|linebreaksbr }}
+                    <p><label> Propietario del Vehículo: </label> {{ incidente.ter_propietario|linebreaksbr }}
+                    <p><label> Chofer: </label> {{ incidente.ter_nombre_conductor|linebreaksbr }}
+                    <p><label> CI. Chofer: </label> {{ incidente.ter_cedula_conductor|linebreaksbr }}
+                    <p><label> Celular: </label> {{ incidente.ter_telefono_conductor|linebreaksbr }}
+
+                    </tr>
                 </div>
                 <div id="cpestana4">
-                    PHP es un lenguaje de programación de uso general de script del lado del servidor originalmente diseñado para el desarrollo web de contenido dinámico. Fue uno de los primeros lenguajes de programación del lado del servidor que se podían incorporar directamente en el documento HTML en lugar de llamar a un archivo externo que procese los datos. El código es interpretado por un servidor web con un módulo de procesador de PHP que genera la página Web resultante. PHP ha evolucionado por lo que ahora incluye también una interfaz de línea de comandos que puede ser usada en aplicaciones gráficas independientes. PHP puede ser usado en la mayoría de los servidores web al igual que en casi todos los sistemas operativos y plataformas sin ningún costo.
+                    {% for comentario in comentarios %} 
+                        <p> Fecha: {{comentario.fecha}}
+                        <p> Usuario: {{comentario.incidente.usuario}}
+                        <p> Comentario: {{comentario.comentario}}
+                        <br></br>
+                    {% endfor %}  
                 </div>
                 <div id="cpestana5">
-                    Java Platform, Enterprise Edition o Java EE (anteriormente conocido como Java 2 Platform, Enterprise Edition o J2EE hasta la versión 1.4; traducido informalmente como Java Empresarial), es una plataforma de programación—parte de la Plataforma Java—para desarrollar y ejecutar software de aplicaciones en el lenguaje de programación Java. Permite utilizar arquitecturas de N capas distribuidas y se apoya ampliamente en componentes de software modulares ejecutándose sobre un servidor de aplicaciones. La plataforma Java EE está definida por una especificación. Similar a otras especificaciones del Java Community Process, Java EE es también considerada informalmente como un estándar debido a que los proveedores deben cumplir ciertos requisitos de conformidad para declarar que sus productos son conformes a Java EE; estandarizado por The Java Community Process / JCP.
+                    <tr>
+                   <td> <!--a href="{% url 'incidente_detail' pk=incidente.nro_incidente %}"--><label>Número de Incidente: {{ incidente.nro_incidente }}</label></td>
+                    <p><label> Usuario: </label> {{ incidente.usuario.nombre }} </td>
+                    </tr>
+                
                 </div>
                 <div id="cpestana6">
-                    Android es un sistema operativo móvil basado en Linux, que junto con aplicaciones middleware8 está enfocado para ser utilizado en dispositivos móviles como teléfonos inteligentes, tabletas, Google TV y otros dispositivos.9 Es desarrollado por la Open Handset Alliance, la cual es liderada por Google. Este sistema por lo general maneja aplicaciones como Google Play.
+                    <tr>
+                    <td> <!--a href="{% url 'incidente_detail' pk=incidente.nro_incidente %}"--><label>Número de Incidente: {{ incidente.nro_incidente }}</label></td>
+                    <p><label> Estado: </label> {{ incidente.estado.tipo }} </td>
+                    </tr>
+
                 </div>
             </div>
         </div>
-    </body>
-</html>
+{% endblock %}
+

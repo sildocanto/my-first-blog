@@ -8,7 +8,7 @@
 		</tr>
 		{% for archivo in archivos %} 
 			<tr>
-				<td> <a href="{% url 'archivo_detail' pk=archivo.id %}">{{ archivo.link }}</a></td>
+				<td> <a href={{ archivo.link }} target="_blank"> Imagen </a></td>
 				<td>{{archivo.incidente.nro_incidente }} </td>
 				<td>{{archivo.incidente.poliza.nro_poliza }} </td>
 				<td>{{archivo.incidente.poliza.vehiculo.matricula }} </td>
