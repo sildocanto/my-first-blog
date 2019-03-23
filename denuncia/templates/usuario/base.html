@@ -11,9 +11,11 @@
     <body>
         <div class="page-header">
             <a href="{% url 'usuario_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
-            <h1><a href="/">Usuarios</a></h1>
+            <h1><a href="/usuario">Usuarios</a></h1>
         </div>
         <div class="content container">
+            <a href="/seguimiento"><img src="{% static 'css/boton_seguimientos.png' %}"/></a>
+        <br></br>
             <div class="row">
                 <div class="col-md-8">
                     {% block content %}

@@ -4,10 +4,12 @@
 
 	<table class='table'>
 		<tr>
+			<table class="blueTable">
 			<th>Nro_incidente</th><th>Fecha_incidente</th><th>Estado</th><th>Poliza</th><th>Vehiculo</th><th>Pro_nombre</th><th>Pro_cedula</th><th>Usuario</th><th>Fecha_mod</th>
 		</tr>	
 		{% for incidente in incidentes %} 
 			<tr>
+
 				<td> <a href="{% url 'seguimiento_detail' pk=incidente.nro_incidente %}">{{ incidente.nro_incidente }}</a></td>
 				<td>{{ incidente.fecha_incidente }} </td>
 				<td>{{ incidente.estado.tipo }} </td>
