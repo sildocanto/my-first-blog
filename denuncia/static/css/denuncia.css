@@ -38,7 +38,7 @@ h1, h2, h3, h4 {
 .top-menu, .top-menu:hover, .top-menu:visited {
     color: #ffffff;
     float: right;
-    font-size: 75pt;
+    font-size: 50pt;
     margin-right: 20px;
 }
 
@@ -55,28 +55,3 @@ h1, h2, h3, h4 {
     font-weight: bold;
 }
 
-#atras,
-#confirmar {
-  position: absolute;
-  background: #131a60;
-  color: #f8fafc;
-  padding: 25px;
-  border-radius: 10px;
-  bottom: 25px;
-  text-decoration: none;
-}
-#atras:hover,
-#confirmar:hover {
-  background: rgba(135, 206, 235, 0.8);
-  color: #5d8faf;
-  cursor: pointer;
-  
-}
-
-#confirmar {
-  right: 10px;
-}
-
-#atras {
-  left: 10px;
-}

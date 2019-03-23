@@ -3,7 +3,7 @@
 {% block content %}
          
         <div class="contenedor">
-            <div class="titulo">MENÚ GESTIÓN</div>
+            <div class="titulo">INFORMACIÓN</div>
             <div id="pestanas">
                 <ul id=lista>
                     <li id="pestana1"><a href='javascript:cambiarPestanna(pestanas,pestana1);'>Denunica</a></li>
@@ -21,23 +21,23 @@
                 <div id="cpestana1">
                    <tr>
                     <td> <!--a href="{% url 'incidente_detail' pk=incidente.nro_incidente %}"></a--><label>Número de Incidente: {{ incidente.nro_incidente }}</label></td>
-                    <p><label> Fecha incidente: </label> {{ incidente.fecha_incidente }} 
+                    <p><label> Fecha incidente: </label> {{ incidente.fecha_incidente }}</p> 
                     <br></br>
-                    <p><label> Estado: </label> {{ incidente.estado.tipo }} 
+                    <p><label> Estado: </label> {{ incidente.estado.tipo }}</p> 
                     <br></br>
                     <p><label> Póliza: </label> {{ incidente.poliza.nro_poliza }} 
-                    <p><label> Matricula: </label> {{ incidente.poliza.vehiculo.matricula|linebreaksbr }} 
-                    <p><label> Contrantante: </label> {{ incidente.pro_nombre }} 
-                    <p><label> CI: </label> {{ incidente.pro_cedula }} 
+                    <p><label> Matricula: </label> {{ incidente.poliza.vehiculo.matricula|linebreaksbr }}</p> 
+                    <p><label> Contrantante: </label> {{ incidente.pro_nombre }}</p> 
+                    <p><label> CI: </label> {{ incidente.pro_cedula }}</p> 
                     <br></br>
-                    <p><label> Chofer: </label> {{ incidente.pro_nombre|linebreaksbr }}
-                    <p><label> CI. Chofer: </label> {{ incidente.pro_cedula|linebreaksbr }}
-                    <p><label> Vto. Libreta: </label> {{ incidente.pro_vto_libreta|linebreaksbr }}
+                    <p><label> Chofer: </label> {{ incidente.pro_nombre|linebreaksbr }}</p>
+                    <p><label> CI. Chofer: </label> {{ incidente.pro_cedula|linebreaksbr }}</p>
+                    <p><label> Vto. Libreta: </label> {{ incidente.pro_vto_libreta|linebreaksbr }}</p>
                     <p><label> Celulcar: </label> {{ incidente.pro_telefono|linebreaksbr }}
-                    <p><label> Correo electrónico: </label> {{ incidente.pro_email|linebreaksbr }}
+                    <p><label> Correo electrónico: </label> {{ incidente.pro_email|linebreaksbr }}</p>
                     <br></br>
                     <p><h2><label> Descripción Siniestro: </label></h2> 
-                    {{ incidente.pro_descripción|linebreaksbr }}
+                    {{ incidente.pro_descripción|linebreaksbr }}</p>
                     <br></br>
                     </tr>   
                 </div>
@@ -53,21 +53,21 @@
                     <td> <a href="{% url 'incidente_detail' pk=incidente.nro_incidente %}"></a><label>Número de Incidente: {{ incidente.nro_incidente }}</label></td>
                     <p><label> Estado: </label> {{ incidente.estado.tipo }} </td>
                     <br></br>
-                    <p><label> Aseguradora: </label> {{ incidente.ter_aseguradora|linebreaksbr }}
+                    <p><label> Aseguradora: </label> {{ incidente.ter_aseguradora|linebreaksbr }}</p>
                     <p>
                     <p><label> Matricula: </label> {{ incidente.ter_matricula|linebreaksbr }}
-                    <p><label> Propietario del Vehículo: </label> {{ incidente.ter_propietario|linebreaksbr }}
-                    <p><label> Chofer: </label> {{ incidente.ter_nombre_conductor|linebreaksbr }}
-                    <p><label> CI. Chofer: </label> {{ incidente.ter_cedula_conductor|linebreaksbr }}
-                    <p><label> Celular: </label> {{ incidente.ter_telefono_conductor|linebreaksbr }}
+                    <p><label> Propietario del Vehículo: </label> {{ incidente.ter_propietario|linebreaksbr }}</p>
+                    <p><label> Chofer: </label> {{ incidente.ter_nombre_conductor|linebreaksbr }}</p>
+                    <p><label> CI. Chofer: </label> {{ incidente.ter_cedula_conductor|linebreaksbr }}</p>
+                    <p><label> Celular: </label> {{ incidente.ter_telefono_conductor|linebreaksbr }}</p>
 
                     </tr>
                 </div>
                 <div id="cpestana4">
-                    {% for comentario in comentarios %} 
+                    {% for comentario in comentarios %}</p> 
                         <p> Fecha: {{comentario.fecha}}
-                        <p> Usuario: {{comentario.incidente.usuario}}
-                        <p> Comentario: {{comentario.comentario}}
+                        <p> Usuario: {{comentario.incidente.usuario}}</p>
+                        <p> Comentario: {{comentario.comentario}}</p>
                         <br></br>
                     {% endfor %}  
                 </div>

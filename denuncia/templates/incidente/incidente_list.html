@@ -4,7 +4,7 @@
 	<div class="incidente">
 	<table class='table'>
 		<tr>
-			<th>Nro_incidente</th><th>Estado</th><th>Fecha_incidente</th><th>Poliza</th><th>Vehiculo</th><th>Pro_nombre</th><th>Pro_cedula</th><th>pro_vto_libreta</th><th>Pro_telefono</th><th>Pro_email</th><th>Pro_descripción</th><th>Hay_terceros</th><th>Ter_matricula</th><th>Ter_aseguradora</th><th>Ter_propietario</th><th>Ter_nombre_conductor</th><th>Ter_cedula_conductor</th><th>Ter_telefono_conductor</th><th>Usuario</th><th>Fecha_mod</th>
+			<th>Nro_incidente</th><th>Estado</th><th>Fecha_incidente</th><th>Poliza</th><th>Vehiculo</th><th>Pro_nombre</th><th>Pro_cedula</th>
 		</tr>
 		{% for incidente in incidentes %} 
 			<tr>
@@ -13,21 +13,8 @@
 				<td>{{ incidente.fecha_incidente }} </td>
 				<td>{{ incidente.poliza.nro_poliza }} </td>
 				<td>{{ incidente.poliza.vehiculo.matricula }} </td>
-				<td>{{ incidente.pro_nombre }} </td>
-				<td>{{ incidente.pro_cedula }} </td>
-				<td>{{ incidente.pro_vto_libreta }} </td>
-				<td>{{ incidente.pro_telefono }} </td>
-				<td>{{ incidente.pro_email }} </td>
-				<td>{{ incidente.pro_descripción }} </td>
-				<td>{{ incidente.hay_terceros }} </td>
-				<td>{{ incidente.ter_matricula }} </td>
-				<td>{{ incidente.ter_aseguradora }} </td>
-				<td>{{ incidente.ter_propietario }} </td>
-				<td>{{ incidente.ter_nombre_conductor }} </td>
-				<td>{{ incidente.ter_cedula_conductor }} </td>
-				<td>{{ incidente.ter_telefono_conductor }} </td>
-				<td>{{ incidente.usuario.nombre }} </td>
-				<td>{{ incidente.fecha_mod }} </td>
+				<td>{{ incidente.poliza.cliente.nombre|linebreaksbr }}</td>
+        		<td>{{ incidente.poliza.cliente.cedula|linebreaksbr }}</td>
 
 			</tr>	
 		{% endfor %}			
