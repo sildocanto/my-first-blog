@@ -42,8 +42,9 @@
                     </tr>   
                 </div>
                 <div id="cpestana2">
+                    <a href="{% url 'archivo_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
                     {% for archivo in archivos %} 
-                        <td> <a href={{ archivo.link }} target="_blank"> Imagen </a>
+                        <td> <a href="{{ archivo.link }}" target="_blank"> Imagen </a>
                         <br></br>
                     {% endfor %}    
 
@@ -64,11 +65,15 @@
                     </tr>
                 </div>
                 <div id="cpestana4">
-                    {% for comentario in comentarios %}</p> 
+                    <a href="{% url 'comentario_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+                    {% for comentario in comentarios %}</p>
+                        <tr>
+                        <td> <a href="{% url 'comentario_detail' pk=comentario.id %}">{{ comentario.fecha }}</a></td>
                         <p> Fecha: {{comentario.fecha}}
                         <p> Usuario: {{comentario.incidente.usuario}}</p>
                         <p> Comentario: {{comentario.comentario}}</p>
                         <br></br>
+                        </tr>   
                     {% endfor %}  
                 </div>
                 <div id="cpestana5">

@@ -447,4 +447,18 @@ def seguimiento_detail(request,pk):
         except Cliente.DoesNotExist:   
             return render(request, 'cliente/cliente_NoEncontrado.html',) 
 
+def seguimiento_intro(request):
+    if request.method == "POST":
+        form = IniSeguimientoForm(request.POST)
+        pk = request.POST.get("usuario", "")
+        try:
+            usuario = Usuario.objects.get(pk=pk)
+            if form.is_valid():
+                return redirect('seguimiento_list',pk)      
+        except Cliente.DoesNotExist:   
+            return render(request, 'usuario/usuario_NoEncontrado.html',) 
+    else:
+        form = IniSeguimientoForm()
+    return render(request, 'seguimiento/seguimiento_intro.html', {'form': form}) 
+
 

@@ -91,3 +91,9 @@ class SeguimientoForm(forms.ModelForm):
     class Meta:
         model = Incidente
         fields = ('nro_incidente', 'poliza', 'hay_heridos', 'hay_terceros', 'fecha_incidente', 'estado', 'pro_nombre', 'pro_cedula', 'pro_vto_libreta', 'pro_telefono', 'pro_email', 'pro_descripción', 'ter_matricula', 'ter_aseguradora', 'ter_propietario', 'ter_nombre_conductor', 'ter_cedula_conductor', 'ter_telefono_conductor', 'usuario', 'fecha_mod')
+
+
+class IniSeguimientoForm(forms.ModelForm):
+    class Meta:
+        model = Incidente
+        fields = ('nro_incidente', 'poliza', 'hay_heridos', 'hay_terceros', 'fecha_incidente', 'estado', 'pro_nombre', 'pro_cedula', 'pro_vto_libreta', 'pro_telefono', 'pro_email', 'pro_descripción', 'ter_matricula', 'ter_aseguradora', 'ter_propietario', 'ter_nombre_conductor', 'ter_cedula_conductor', 'ter_telefono_conductor', 'usuario', 'fecha_mod')
