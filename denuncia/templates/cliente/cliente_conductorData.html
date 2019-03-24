@@ -6,17 +6,17 @@
         <h1>Datos del Conductor</h1>
 
 
-        {{ poliza.nro_poliza }} 
         <h3>{{ poliza.cliente.nombre }}</h3>
 
         <form method="POST" class="post-form">{% csrf_token %}
 
             {{ form.nro_incidente.as_hidden  }}      
 
-            {{ form.poliza }} 
+            {{ form.poliza.as_hidden }}
 
-            <p>{{ form.hay_heridos }} <label> Hay Heridos</label>
-            <p>{{ form.hay_terceros }} <label> Hay Terceros involucrados</label>
+            {{ form.hay_heridos.as_hidden }}
+            {{ form.hay_terceros.as_hidden }}
+            
             <p><label>Fecha y Hora de incidente</label>{{ form.fecha_incidente }} 
             <p><label>Nombre Conductor</label>{{ form.pro_nombre }} 
             </p><p><label>Cedula Conductor</label>{{ form.pro_cedula }} 
@@ -34,7 +34,7 @@
             {{ form.ter_cedula_conductor.as_hidden  }} 
             {{ form.ter_telefono_conductor.as_hidden  }} 
 
-            {{ form.estado }}
+            {{ form.estado.as_hidden }}
                  
             {{ form.usuario.as_hidden }} 
             {{ form.fecha_mod.as_hidden }} 

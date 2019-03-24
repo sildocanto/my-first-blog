@@ -80,9 +80,9 @@ def cliente_terceroData(request,pk):
         if form.is_valid(): 
             incidente = form.save(commit=False)         
             incidente.save()
-            return redirect('incidente_detail', pk=incidente.nro_incidente)
+            return redirect('cliente_fin', pk=incidente.nro_incidente)
     else:
-        form = IncidenteForm()    
+        form = IncidenteForm(initial={'poliza': pk, 'estado':'1','hay_heridos':False,'hay_terceros':True })    
     return render(request, 'cliente/cliente_terceroData.html', {'form': form})
 
 
@@ -92,17 +92,12 @@ def cliente_conductorData(request,pk):
         form = IncidenteForm(request.POST)
         if form.is_valid(): 
             incidente = form.save(commit=False)
-
             incidente.save() 
             return redirect('cliente_fin', pk=incidente.nro_incidente) 
-           # return redirect('cliente_fin', {'form':form})
     else:
-##        return render(request, 'cliente/cliente_conductorData.html', {'poliza': poliza})  
-        form = IncidenteForm()     
-    return render(request, 'cliente/cliente_conductorData.html', {'form': form,'poliza': poliza})             
+        form = IncidenteForm(initial={'poliza': pk, 'estado':'1','hay_heridos':False,'hay_terceros':False } )  
+    return render(request, 'cliente/cliente_conductorData.html', {'form': form, 'poliza': poliza})             
 
-#    poliza = get_object_or_404(Poliza, nro_poliza=pk)
- #   return render(request, 'cliente/cliente_hayTercero.html', {'poliza': poliza})
 
 def cliente_fin(request,pk):
     incidente = get_object_or_404(Incidente, nro_incidente=pk)  

@@ -7,8 +7,8 @@ class ClienteForm(forms.ModelForm):
         fields = ('cedula', 'nombre', 'vehiculo',)
 
 class IniClienteForm(forms.Form):
-	cedula = forms.CharField(max_length=100)
-
+    cedula = forms.IntegerField()
+    vehiculo = forms.CharField(max_length=7)
 
 class TerceroDataForm(forms.Form):
     nro_poliza = forms.CharField(max_length=8)

@@ -5,8 +5,8 @@
     <form method="POST" class="post-form">{% csrf_token %}
         <label><h3>Cédula</h3> Sin puntos ni guiones: </label>
         {{ form.cedula }} <br>
-        <!--label><h3>Matricula</h3> Sin puntos ni guiones: </label>
-        {{ form.vehiculo }} -->
+        <label><h3>Matricula</h3> </label>
+        {{ form.vehiculo }} <br>
         <button type="submit" class="save btn btn-default">Ingresar</button>
     </form>
 {% endblock %}
