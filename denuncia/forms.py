@@ -20,30 +20,6 @@ class TerceroDataForm(forms.Form):
     ter_telefono_conductor = forms.CharField(max_length=9) 
 
 
-
-class XIncidenteForm(forms.ModelForm):
-    nro_incidente = models.AutoField(primary_key=True)
-    poliza = models.ForeignKey('Poliza',on_delete=models.CASCADE,) 
-    hay_heridos = models.BooleanField()
-    hay_terceros = models.BooleanField()
-    fecha_incidente = models.DateTimeField(default=timezone.now)
-    estado = models.ForeignKey('Estado',on_delete=models.CASCADE,)
-    pro_nombre = models.CharField(max_length=30)
-    pro_cedula = models.CharField(max_length=8)
-    pro_vto_libreta = models.DateField(null=True, blank=True) 
-    pro_telefono = models.CharField(max_length=9) 
-    pro_email = models.EmailField(max_length=35, null=True, blank=True) 
-    pro_descripción = models.TextField(max_length=500) 
-    ter_matricula = models.CharField(max_length=7, null=True, blank=True)
-    ter_aseguradora = models.CharField(max_length=30, null=True, blank=True) 
-    ter_propietario = models.BooleanField()
-    ter_nombre_conductor = models.CharField(max_length=50, null=True, blank=True)
-    ter_cedula_conductor = models.CharField(max_length=8, null=True, blank=True)
-    ter_telefono_conductor = models.CharField(max_length=9, null=True, blank=True) 
-    usuario = models.ForeignKey('Usuario',on_delete=models.CASCADE,)
-    fecha_mod = models.DateTimeField(default=timezone.now)
-
-
 class IncidenteForm(forms.ModelForm):
     class Meta:
         model = Incidente
@@ -93,7 +69,6 @@ class SeguimientoForm(forms.ModelForm):
         fields = ('nro_incidente', 'poliza', 'hay_heridos', 'hay_terceros', 'fecha_incidente', 'estado', 'pro_nombre', 'pro_cedula', 'pro_vto_libreta', 'pro_telefono', 'pro_email', 'pro_descripción', 'ter_matricula', 'ter_aseguradora', 'ter_propietario', 'ter_nombre_conductor', 'ter_cedula_conductor', 'ter_telefono_conductor', 'usuario', 'fecha_mod')
 
 
-class IniSeguimientoForm(forms.ModelForm):
-    class Meta:
-        model = Incidente
-        fields = ('nro_incidente', 'poliza', 'hay_heridos', 'hay_terceros', 'fecha_incidente', 'estado', 'pro_nombre', 'pro_cedula', 'pro_vto_libreta', 'pro_telefono', 'pro_email', 'pro_descripción', 'ter_matricula', 'ter_aseguradora', 'ter_propietario', 'ter_nombre_conductor', 'ter_cedula_conductor', 'ter_telefono_conductor', 'usuario', 'fecha_mod')
+class IniSeguimientoForm(forms.Form):
+    usuario = forms.CharField(max_length=8)
+    clave = forms.CharField(widget=forms.PasswordInput(), max_length=8)

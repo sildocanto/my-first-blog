@@ -406,18 +406,7 @@ def seguimiento_list(request):
     incidentes = Incidente.objects.order_by('nro_incidente')
     return render(request, 'seguimiento/seguimiento_list.html', {'incidentes': incidentes})
 
-def Xseguimiento_detail(request,pk):
-    incidente = get_object_or_404(Incidente, nro_incidente=pk)
-    archivo = get_object_or_404(Archivo, incidente=pk)
-    comentario = get_object_or_404(Comentario, incidente=pk)
-    return render(request, 'seguimiento/seguimiento_detail.html',
-        dict(
-            {'incidente': incidente,'archivo': archivo,'comentario': comentario},
-        )    
-    
-    ) 
 
-Vehiculo.objects.order_by('matricula')
 def seguimiento_detail(request,pk):
     incidente = get_object_or_404(Incidente, nro_incidente=pk)
     try:
@@ -445,13 +434,15 @@ def seguimiento_detail(request,pk):
 def seguimiento_intro(request):
     if request.method == "POST":
         form = IniSeguimientoForm(request.POST)
-        pk = request.POST.get("usuario", "")
+        usu = request.POST.get("usuario", "")
+        pas = request.POST.get("clave", "")
         try:
-            usuario = Usuario.objects.get(pk=pk)
-            if form.is_valid():
-                return redirect('seguimiento_list',pk)      
+            usuario = Usuario.objects.filter(usuario=usu, clave=pas)
+            if usuario.count() > 0:
+                if form.is_valid():
+                    return redirect('seguimiento_list')      
         except Cliente.DoesNotExist:   
-            return render(request, 'usuario/usuario_NoEncontrado.html',) 
+            return render(request, 'seguimiento/seguimiento_intro.html',{'form': form}) 
     else:
         form = IniSeguimientoForm()
     return render(request, 'seguimiento/seguimiento_intro.html', {'form': form}) 
