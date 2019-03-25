@@ -59,10 +59,10 @@ urlpatterns = [
     path('comentario/<int:pk>/edit/', views.comentario_edit, name='comentario_edit'),
     path('comentario/<int:pk>/del/', views.comentario_delete, name='comentario_delete'),
 
-    path('seguimiento/', views.seguimiento_list, name='seguimiento_list'),
-    path('seguimiento/<int:pk>', views.seguimiento_detail, name='seguimiento_detail'),
 
-    path('seguimiento/', views.seguimiento_list, name='seguimiento_list'),
+
+    path('seguimiento/', views.seguimiento_intro, name='seguimiento_intro'),
+    path('seguimiento/list', views.seguimiento_list, name='seguimiento_list'),
     path('seguimiento/<int:pk>', views.seguimiento_detail, name='seguimiento_detail'),
     path('seguimiento/new/', views.seguimiento_new, name='siguimiento_new'),
     path('seguimiento/<int:pk>/edit/', views.seguimiento_edit, name='seguimiento_edit'),
