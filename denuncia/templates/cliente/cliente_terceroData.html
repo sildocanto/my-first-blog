@@ -4,11 +4,10 @@
     <div class="poliza">
 
     	<h1>Datos Conductor</h1>
-       
 
 
-        <!--p><h4><label>Póliza Nro.</label> {{ poliza.nro_poliza }}</h4--> 
-        <h3><label>Nombre:</label><h3>{{ poliza.cliente.nombre }}</h3>
+        <p><h4><label>Póliza Nro.</label> {{ poliza.nro_poliza }}</h4> 
+        <p><h4><label>Nombre:</label> {{ poliza.cliente.nombre }}</h4>
 
         <form method="POST" class="post-form">{% csrf_token %}
 
@@ -22,7 +21,22 @@
             <p><label>Fecha y Hora de incidente</label>{{ form.fecha_incidente }} 
             <p><label>Nombre Conductor</label>{{ form.pro_nombre }} 
             </p><p><label>Cedula Conductor</label>{{ form.pro_cedula }} 
-            <p><label>Vencimiento licencia conducir</label>{{ form.pro_vto_libreta }} 
+            <p><label>Vencimiento licencia conducir</label>{{ form.pro_vto_libreta }}<div class="container">
+         <div class="row">
+                </div>
+                <br />
+                <div class="row">
+                <div class='col-sm-3'>
+                <div class="form-group">
+                <div class='input-group date' id='datetimepicker1'>
+                    <input type='text' class="form-control" />
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
             <p><label>Telefono</label>{{ form.pro_telefono }} 
             <p><label>Email</label>{{ form.pro_email }} 
             <p><label>Descripcion del incidente</label>{{ form.pro_descripción }} 
@@ -32,7 +46,7 @@
                 <h3 class="tercero">Datos Tercero Involucrado:</h3>
             </p>    
             <p><b>
-            <p><label class="tercero">Matrícula</label>{{ form.ter_matricula }} 
+            <p><label class="tercero">Matricula</label>{{ form.ter_matricula }} 
             <p><label class="tercero">Aseguradora</label>{{ form.ter_aseguradora }} 
             <p><label class="tercero">Es Propietario?</label>{{ form.ter_propietario }} 
             <p><label class="tercero">Nombre Conductor</label>{{ form.ter_nombre_conductor }} 
@@ -51,8 +65,5 @@
 
     </div>
 {% endblock %}
-
-
-
 
 
