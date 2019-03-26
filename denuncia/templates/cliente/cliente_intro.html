@@ -1,12 +1,62 @@
-{% extends 'denuncia/base.html' %}
+{% extends 'cliente/base_login_cliente.html' %}
 
 {% block content %}
-    <h1>Siniestro Vehicular</h1>
-    <form method="POST" class="post-form">{% csrf_token %}
-        <label><h3>Cédula</h3> Sin puntos ni guiones: </label>
-        {{ form.cedula }} <br>
-        <label><h3>Matricula</h3> </label>
-        {{ form.vehiculo }} <br>
-        <button type="submit" class="save btn btn-default">Ingresar</button>
+    
+
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login101">
+				<div class="login101-form-title" >
+
+			</div>
+			<br></br>
+
+
+
+
+    <form method="POST" class="login100-form validate-form">{% csrf_token %}
+    	<div class="wrap-input100 validate-input m-b-26" data-validate="Username is required">
+    		<h1><label class="wrap-input100">Cédula: </label></h1>
+		        		  <h2>{{ form.cedula }}</h2> 
+		 </div>	
+
+        <!--div>
+		<br></br-->
+        <!--label><h2>Cédula: </h2></label><input class="input101" type="password" name="pass" placeholder="Ingresar cédula (ej: 12345678)"> 
+        {{ form.cedula }} 
+        </div-->
+        <br></br>
+        <div class="wrap-input100 validate-input m-b-26" data-validate="Username is required">	
+		    <h1><label class="wrap-input100">Matrícula: </label></h1>
+		        				<h2>{{ form.vehiculo }}<h2> 
+		</div>
+
+      	<!--div class="wrap-input101 validate-input m-b-18" data-validate="Username is required">	
+        <label><h2>Matricula: </h2></label><input class="input101" type="password" name="pass" placeholder="Ingresar matricula">
+        {{ form.vehiculo }} 
+        </div-->
+
+        <br></br>
+		<div>
+		<br></br>
+		</div>
+        <div class="container-login100-form-btn">
+		    <button type="submit" class="login100-form-btn"><h2>Ingresar<h2></button><br>
+		</div>
+ 
     </form>
+
+			</div>
+		</div>
+	</div>
+	
+
 {% endblock %}
+
+
+
+
+	
+
+
+				

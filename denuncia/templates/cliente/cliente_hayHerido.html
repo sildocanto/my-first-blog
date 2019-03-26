@@ -3,14 +3,15 @@
 {% block content %}
     <div class="poliza">
 
-    	<h3>{{ poliza.cliente.vehiculo.matricula }}</h3>
-    	<h4>{{ poliza.cliente.nombre }}</h4>
-    	<h4>{{ poliza.cliente.cedula }}</h4>
-    	<h4>{{ poliza.nro_poliza }}</h4>
+    	<h4>Matrícula: {{ poliza.cliente.vehiculo.matricula }}</h4>
+    	<h4>Nombre: {{ poliza.cliente.nombre }}</h4>
+    	<h4>Cédula: {{ poliza.cliente.cedula }}</h4>
+    	<h4>Póliza Nro: {{ poliza.nro_poliza }}</h4>
 
     	<p>
+        <br></br>
 
-    	<h1>Hay heridos ? </h1>
+    	<label><h1>Hay heridos ? </h1></label>
 
         <a class="btn btn-default" href="{% url 'cliente_hayTercero' pk=poliza.nro_poliza %}">No</a>   
         <a class="btn btn-default" href="{% url '911' %}">Si</a>  
