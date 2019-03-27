@@ -3,18 +3,37 @@
 {% block content %}
     <div class="poliza">
 
-    	<h4>Matrícula: {{ poliza.cliente.vehiculo.matricula }}</h4>
-    	<h4>Nombre: {{ poliza.cliente.nombre }}</h4>
-    	<h4>Cédula: {{ poliza.cliente.cedula }}</h4>
-    	<h4>Póliza Nro: {{ poliza.nro_poliza }}</h4>
+    	<font style="font-size: 25px;"><label>Matrícula: {{ poliza.cliente.vehiculo.matricula }}</font>
+        </br>
+    	<font style="font-size: 25px;"><label>Nombre: {{ poliza.cliente.nombre }}</font>
+        </br>
+    	<font style="font-size: 25px;"><label>Cédula: {{ poliza.cliente.cedula }}</font>
+        </br>
+    	<font style="font-size: 25px;"><label>Póliza Nro: {{ poliza.nro_poliza }}</font>
 
     	<p>
         <br></br>
+        <font style="font-size: 80px;"><center><label>Hay <b></b>heridos ? </label></font>
+        <br></br>
+        <br></br>
+       
+        <a class="btn btn-default" href="{% url 'cliente_hayTercero' pk=poliza.nro_poliza %}" ><font style="font-size: 45px;"><label>NO</a></label></font>
+        
+        <a class="btn btn-default" href="{% url '911' %}"><font style="font-size: 45px;"><label>Si</a></label></font>
 
-    	<label><h1>Hay heridos ? </h1></label>
 
-        <a class="btn btn-default" href="{% url 'cliente_hayTercero' pk=poliza.nro_poliza %}">No</a>   
-        <a class="btn btn-default" href="{% url '911' %}">Si</a>  
+    	
+
 
     </div>
 {% endblock %}
+
+
+
+
+
+        
+
+
+
+  

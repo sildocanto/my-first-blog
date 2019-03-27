@@ -12,8 +12,10 @@
 
 				</form>
 				<form action="confirmar.php" name="miconfirmar" id="miconfirmar" method="POST" style="text-align:center">
-    				
-    				<a class="btn btn-default" href="{% url 'cliente_intro' %}">Finalizar</a> 
+    				<br></br>
+    				<a href="{% url 'cliente_intro' %}" class="square_btn">
+                            <i class="fa fa-caret-right"></i><font style="font-size: 45px;"><label>Finalizar</a></font> 
+                            <br></br>
 			</form>
         	</div>
         </body>
@@ -21,3 +23,8 @@
     </div>
 
 {% endblock %}
+
+<!--a class="btn btn-default" href="{% url 'cliente_conductorData' pk=poliza.nro_poliza %}"><font style="font-size: 45px;"><label>No</a></font>
+
+    <button type="submit" class="square_btn">
+                            <i class="fa fa-caret-right"></i><font style="font-size: 45px;"><label>Guardar</button-->
