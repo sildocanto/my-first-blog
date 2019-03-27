@@ -10,14 +10,19 @@
 
 			</div>
 			<br></br>
+			</br>
+			</br>
+			</br>
+			</br>
+			</br>
 
 
 
 
     <form method="POST" class="login100-form validate-form">{% csrf_token %}
     	<div class="wrap-input100 validate-input m-b-26" data-validate="Username is required">
-    		<h1><label class="wrap-input100">Cédula: </label></h1>
-		        		  <h2>{{ form.cedula }}</h2> 
+    		<font style="font-size: 70px;"><label class="wrap-input100">Cédula: </label></font>
+		        		 <font style="font-size: 70px;">{{ form.cedula }}</font>
 		 </div>	
 
         <!--div>
@@ -27,8 +32,8 @@
         </div-->
         <br></br>
         <div class="wrap-input100 validate-input m-b-26" data-validate="Username is required">	
-		    <h1><label class="wrap-input100">Matrícula: </label></h1>
-		        				<h2>{{ form.vehiculo }}<h2> 
+		    <font style="font-size: 70px;"><label class="wrap-input100">Matrícula: </label></font>
+		        				<font style="font-size: 70px;">{{ form.vehiculo }}</font>
 		</div>
 
       	<!--div class="wrap-input101 validate-input m-b-18" data-validate="Username is required">	
@@ -39,9 +44,10 @@
         <br></br>
 		<div>
 		<br></br>
+			</br>
 		</div>
         <div class="container-login100-form-btn">
-		    <button type="submit" class="login100-form-btn"><h2>Ingresar<h2></button><br>
+		    <button type="submit" class="login100-form-btn"><font style="font-size: 70px;">Ingresar</font></button><br>
 		</div>
  
     </form>

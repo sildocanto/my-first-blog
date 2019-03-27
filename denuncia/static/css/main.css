@@ -169,8 +169,8 @@ iframe {
 }
 
 .container-login100 {
-  width: 100%;  
-  min-height: 100vh;
+  width: 120%;  
+  min-height: 120vh;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -179,7 +179,7 @@ iframe {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  padding: 15px;
+  padding: 5px;
   background: #efeefa;
 }
 
@@ -250,7 +250,7 @@ iframe {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 43px 88px 93px 190px;
+  padding: 43px 88px 93px 70px;
 }
 
 
@@ -404,10 +404,10 @@ input.input100 {
   justify-content: center;
   align-items: center;
   padding: 0 20px;
-  min-width: 360px;
-  height: 50px;
+  min-width: 700px;
+  height: 100px;
   background-color: #160f5c;
-  border-radius: 25px;
+  border-radius: 40px;
 
   font-family: Poppins-Regular;
   font-size: 16px;
@@ -508,9 +508,9 @@ input.input100 {
   content: "";
   display: block;
   position: absolute;
-  z-index: 120;
+  z-index: 180;
   width: 100%;
-  height: 160%;
+  height: 200%;
   top: 0;
   left: 0;
   /*background-color: rgba(54,84,99,0.7);*/
