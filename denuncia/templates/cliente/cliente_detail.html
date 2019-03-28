@@ -7,10 +7,15 @@
                 {{ cliente.cedula}}
             </div>        
         {% endif %}
-        <a class="btn btn-default" href="{% url 'cliente_edit' pk=cliente.cedula %}"><span class="glyphicon glyphicon-pencil"></span></a>
-        <a class="btn btn-default" href="{% url 'cliente_delete' pk=cliente.cedula %}"><span class="glyphicon glyphicon-trash"></span></a>        
-        <h1>{{ cliente.cedula }}</h1>
-        <p>{{ cliente.nombre|linebreaksbr }}</p>
-        <p>{{ cliente.vehiculo.matricula|linebreaksbr }}</p>
+        <font style="font-size: 30px;"><label>
+        <a class="square_btn" href="{% url 'cliente_edit' pk=cliente.cedula %}"><span class="glyphicon glyphicon-pencil"></span></a>
+        <a class="square_btn" href="{% url 'cliente_delete' pk=cliente.cedula %}"><span class="glyphicon glyphicon-trash"></span></a></h3>
+        <br></br>       
+        <h2>Cédula de identidad: {{ cliente.cedula }}</h2>
+        <h2>Nombre: {{ cliente.nombre|linebreaksbr }}</h2>
+        <h2>Matrícula: {{ cliente.vehiculo.matricula|linebreaksbr }}</h2>
     </div>
 {% endblock %}
+
+
+ 

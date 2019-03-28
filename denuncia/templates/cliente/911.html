@@ -1,7 +1,7 @@
 {% load static %}
 <html>
     <head>
-        <title>Siniestros</title>
+       
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
         <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
@@ -12,18 +12,26 @@
     <body>
         <div class="page-header">
             
-            <h1><img src="{% static 'css/denuncia.png' %}" alt="logo" height="190" width="400"  margin-right:"15px"><a href="/">  Seguros S.A.</a></h1>
-            </div>
-                <p><h1><a> SI HAY HERIDOS:</a></h1>        
+            <h1><img src="{% static 'css/denunica_1.png' %}" alt="logo" height="190" width="400"  margin-right:"15px"><a href="/">  Seguros S.A.</a></h1>
+
         </div>
+        <br></br>
+            
+        <font style="font-size: 70px;"><label>Sigue los siguintes pasos: </label></font>    
+        </div>
+        <br></br>
+        <br></br>
+        <br></br>
         <div class="content container">
             <div class="row">
                 <div class="col-md-8">
-                    <h1><img src="{% static 'css/boton emergencia 911.png' %}" alt="logo" height="150" width="150"  margin-right:"15px"><a>  Llamar de inmediato al 911.</a></h1>
-                    <h1><img src="{% static 'css/0800.png' %}" alt="logo" height="100" width="150"  margin-right:"15px"><a> Realizar la denuncia.</a></h4>
-                    <h4>- Brindar asistencia a las personas lesionadas (de acuerdo a sus posibilidades).</h4>
-                    <h4>- Quedarse en el lugar del accidente hasta que se presente autoridades competentes.</h4>
-                    <h4></h4>
+                    <font style="font-size: 40px;"><center><label><img src="{% static 'css/boton emergencia 911.png' %}" alt="logo" height="150" width="150"  margin-right:"15px"> Llamar de inmediato al 911.</label></font> 
+                    <font style="font-size: 40px;"><center><label><img src="{% static 'css/0800.png' %}" alt="logo" height="100" width="150"  margin-right:"15px"> Realizar la denuncia al 0800.</label></font>
+                    <br></br>
+                    <font style="font-size: 40px;"><center><label>- Brindar asistencia a las personas lesionadas (de acuerdo a sus posibilidades).</label></font> 
+                    <br></br>
+                    <font style="font-size: 40px;"><center><label>- Quedarse en el lugar del accidente hasta que se presente autoridades competentes.</label></font> 
+                    <br></br>
                     <br></br>
                     <p align="right"> 
                     <a  href="{% url 'cliente_intro' %}" class="square_btn">

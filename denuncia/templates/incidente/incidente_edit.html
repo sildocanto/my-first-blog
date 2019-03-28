@@ -4,6 +4,8 @@
     <h1>Nuevo Incidente</h1>
     <form method="POST" class="post-form">{% csrf_token %}
         {{ form.as_p }}
-        <button type="submit" class="save btn btn-default">Guardar</button>
+        <button type="submit" class="save square_btn">
+        	<i class="fa fa-caret-right"></i><font style="font-size: 30px;"><label>Guardar</button>
     </form>
 {% endblock %}
+

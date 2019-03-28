@@ -7,28 +7,32 @@
                 {{ incidente.nro_incidente}}
             </div>        
         {% endif %}
-        <a class="btn btn-default" href="{% url 'incidente_edit' pk=incidente.nro_incidente %}"><span class="glyphicon glyphicon-pencil"></span></a>
-        <a class="btn btn-default" href="{% url 'incidente_delete' pk=incidente.nro_incidente %}"><span class="glyphicon glyphicon-trash"></span></a>    
+        <font style="font-size: 30px;"><label>
+        <a class="square_btn" href="{% url 'incidente_edit' pk=incidente.nro_incidente %}"><span class="glyphicon glyphicon-pencil"></span></a>
+        <a class="square_btn" href="{% url 'incidente_delete' pk=incidente.nro_incidente %}"><span class="glyphicon glyphicon-trash"></span></a>    
         <br></br>    
-        <td><label>Número de Incidente: {{ incidente.nro_incidente }}</label></td>
-        <p><label> Fecha incidente: </label> {{ incidente.fecha_incidente }}</p> 
-        <p><label> Estado: </label> {{ incidente.estado.tipo }}</p> 
-        <p><label> Póliza: </label> {{ incidente.poliza.nro_poliza }} 
-        <p><label> Matricula: </label> {{ incidente.poliza.vehiculo.matricula|linebreaksbr }}</p> 
-        <p><label> Contrantante: </label> {{ incidente.pro_nombre }}</p> 
-        <p><label> CI: </label> {{ incidente.pro_cedula }}</p> 
-        <p><label> Chofer: </label> {{ incidente.pro_nombre|linebreaksbr }}</p>
-        <p><label> CI. Chofer: </label> {{ incidente.pro_cedula|linebreaksbr }}</p>
-        <p><label> Vto. Libreta: </label> {{ incidente.pro_vto_libreta|linebreaksbr }}</p>
-        <p><label> Celulcar: </label> {{ incidente.pro_telefono|linebreaksbr }}
-        <p><label> Correo electrónico: </label> {{ incidente.pro_email|linebreaksbr }}</p>
-        <p><h3><label> Descripción Siniestro: </label></h3> {{ incidente.pro_descripción|linebreaksbr }}</p>
+        <td><h3>Número de Incidente: {{ incidente.nro_incidente }}</h3></td>
+        <p><h3> Fecha incidente: </label> {{ incidente.fecha_incidente }}</p> 
+        <p><h3> Estado: </label> {{ incidente.estado.tipo }}</p> 
         <br></br>
-        <p><label> Aseguradora: </label> {{ incidente.ter_aseguradora|linebreaksbr }}</p>
-        <p>
-        <p><label> Matricula: </label> {{ incidente.ter_matricula|linebreaksbr }}
-        <p><label> Propietario del Vehículo: </label> {{ incidente.ter_propietario|linebreaksbr }}</p>
-        <p><label> Chofer: </label> {{ incidente.ter_nombre_conductor|linebreaksbr }}</p>
-        <p><label> CI. Chofer: </label> {{ incidente.ter_cedula_conductor|linebreaksbr }}</p>
-        <p><label> Celular: </label> {{ incidente.ter_telefono_conductor|linebreaksbr }}</p>
+        <p><h3> Póliza: </label> {{ incidente.poliza.nro_poliza }} 
+        <p><h3> Matricula: </label> {{ incidente.poliza.vehiculo.matricula|linebreaksbr }}</p> 
+        <p><h3> Contrantante: </label> {{ incidente.pro_nombre }}</p> 
+        <p><h3> CI: </label> {{ incidente.pro_cedula }}</p> 
+        <p><h3> Chofer: </label> {{ incidente.pro_nombre|linebreaksbr }}</p>
+        <p><h3> CI. Chofer: </label> {{ incidente.pro_cedula|linebreaksbr }}</p>
+        <p><h3> Vto. Libreta: </label> {{ incidente.pro_vto_libreta|linebreaksbr }}</p>
+        <p><h3> Celulcar: </label> {{ incidente.pro_telefono|linebreaksbr }}
+        <p><h3> Correo electrónico: </label> {{ incidente.pro_email|linebreaksbr }}</p>
+        <br></br>   
+        <p><h2> Descripción Siniestro:</h2><h3>{{ incidente.pro_descripción|linebreaksbr }}</p></h3>
+        <br></br>
+        <p><h3> Aseguradora: </label> {{ incidente.ter_aseguradora|linebreaksbr }}</p>
+        <p><h3> Matricula: </label> {{ incidente.ter_matricula|linebreaksbr }}
+        <p><h3> Propietario del Vehículo: </label> {{ incidente.ter_propietario|linebreaksbr }}</p>
+        <p><h3> Chofer: </label> {{ incidente.ter_nombre_conductor|linebreaksbr }}</p>
+        <p><h3> CI. Chofer: </label> {{ incidente.ter_cedula_conductor|linebreaksbr }}</p>
+        <p><h3> Celular: </label> {{ incidente.ter_telefono_conductor|linebreaksbr }}</p>
 {% endblock %}
+
+

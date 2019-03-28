@@ -7,9 +7,11 @@
                 {{ usuario.usuario_id}}
             </div>        
         {% endif %}
-        <a class="btn btn-default" href="{% url 'usuario_edit' pk=usuario.usuario_id %}"><span class="glyphicon glyphicon-pencil"></span></a>
-        <a class="btn btn-default" href="{% url 'usuario_delete' pk=usuario.usuario_id %}"><span class="glyphicon glyphicon-trash"></span></a>        
-        <h1>{{ usuario.nombre }}</h1>
-        <p>{{ usuario.clave|linebreaksbr }}</p>
+        <font style="font-size: 30px;"><label>
+        <a class="square_btn" href="{% url 'usuario_edit' pk=usuario.usuario_id %}"><span class="glyphicon glyphicon-pencil"></span></a>
+        <a class="square_btn" href="{% url 'usuario_delete' pk=usuario.usuario_id %}"><span class="glyphicon glyphicon-trash"></span></a>        
+        <h3>Nombre: {{ usuario.nombre }}</h3>
+        <h3>Clave: {{ usuario.clave|linebreaksbr }}</h3>
     </div>
 {% endblock %}
+

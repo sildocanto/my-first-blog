@@ -20,23 +20,8 @@
             
             <p><label>Fecha y Hora de incidente</label>{{ form.fecha_incidente }} 
             <p><label>Nombre Conductor</label>{{ form.pro_nombre }} 
-            <p><label>Cedula Conductor</label>{{ form.pro_cedula }} 
-            <p><label>Vencimiento licencia conducir</label>{{ form.pro_vto_libreta }}<div class="container"></div>
-         <div class="row">
-                </div>
-                <p>
-                <div class="row">
-                <div class='col-sm-3'>
-                <div class="form-group">
-                <div class='input-group date' id='datetimepicker1'>
-                    <input type='text' class="form-control" />
-                    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
-                    </span>
-                </div>
-            </div>
-        </div>
-    </div>
-
+            </p><p><label>Cedula Conductor</label>{{ form.pro_cedula }} 
+            <p><label>Vencimiento licencia conducir</label>{{ form.pro_vto_libreta }} 
             <p><label>Telefono</label>{{ form.pro_telefono }} 
             <p><label>Email</label>{{ form.pro_email }} 
             <p><label>Descripcion del incidente</label>{{ form.pro_descripción }} 
@@ -58,15 +43,12 @@
             {{ form.estado.as_hidden }}
                  
             {{ form.usuario.as_hidden }} 
-            {{ form.fecha_mod.as_hidden }}
+            {{ form.fecha_mod.as_hidden }} 
 
-            <br><br> 
-
-            <button type="submit" class="save square_btn">
-                            <i class="fa fa-caret-right"></i><font style="font-size: 45px;"><label>Guardar</button>
+            <button type="submit" class="save btn btn-default">Guardar</button>
         </form> 
 
     </div>
 {% endblock %}
- 
+
 

@@ -7,14 +7,17 @@
                 {{ archivo.id}}
             </div>        
         {% endif %}
-        <a class="btn btn-default" href="{% url 'archivo_edit' pk=archivo.id %}"><span class="glyphicon glyphicon-pencil"></span></a>
-        <a class="btn btn-default" href="{% url 'archivo_delete' pk=archivo.id %}"><span class="glyphicon glyphicon-trash"></span></a>        
-        <h1>{{ archivo.link }}</h1>
-        <p>{{ archivo.incidente.nro_incidente|linebreaksbr }}</p>
-        <p>{{ archivo.incidente.poliza.nro_poliza|linebreaksbr }}</p>
-        <p>{{ archivo.incidente.poliza.vehiculo.matricula|linebreaksbr }}</p>
-        <p>{{ archivo.incidente.poliza.cliente.nombre|linebreaksbr }}</p>
-        <p>{{ aarchivo.incidente.poliza.cliente.cedula|linebreaksbr }}</p>
+        <font style="font-size: 30px;"><label>
+        <a class="square_btn" href="{% url 'archivo_edit' pk=archivo.id %}"><span class="glyphicon glyphicon-pencil"></span></a>
+        <a class="square_btn" href="{% url 'archivo_delete' pk=archivo.id %}"><span class="glyphicon glyphicon-trash"></span></a> 
+        <br></br>       
+        <h3>Imagen: {{ archivo.link }}</h3>
+        <h3>Nro. Incidente: {{ archivo.incidente.nro_incidente|linebreaksbr }}</h3>
+        <h3>Póliza: {{ archivo.incidente.poliza.nro_poliza|linebreaksbr }}</h3>
+        <h3>Matrícula: {{ archivo.incidente.poliza.vehiculo.matricula|linebreaksbr }}</h3>
+        <h3>Nombre: {{ archivo.incidente.poliza.cliente.nombre|linebreaksbr }}</h3>
+        <h3>Cédula de identidad: {{ archivo.incidente.poliza.cliente.cedula|linebreaksbr }}</h3>
     </div>
     </div>
 {% endblock %}
+

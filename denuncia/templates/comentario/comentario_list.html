@@ -3,12 +3,13 @@
 {% block content %}
 
 	<table class='table'>
+
 		<tr>
-			<th>Fecha</th><th>Incidente</th><th>Estado</th><th>Poliza</th><th>Vehiculo</th><th>Cliente</th><th>Cedula cliente</th><th>Usuario</th><th>Comentario</th>
+			<th>Fecha</th><th>Incidente</th><th>Estado</th><th>Póliza</th><th>Matrícula</th><th>Cliente</th><th>Cédula</th><th>Usuario</th><th>Comentario</th>
         </tr>
 		{% for comentario in comentarios %} 
 			<tr>
-				<td> <a href="{% url 'comentario_detail' pk=comentario.id %}">{{ comentario.fecha }}</a></td>
+				<td><a href="{% url 'comentario_detail' pk=comentario.id %}"> {{ comentario.fecha }}</a></td>
 				<td>{{comentario.incidente.nro_incidente }} </td>
 				<td>{{comentario.incidente.estado}} </td>
 				<td>{{comentario.incidente.poliza.nro_poliza }} </td>
@@ -23,3 +24,4 @@
 	
 	
 {% endblock %}
+

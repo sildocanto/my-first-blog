@@ -68,8 +68,8 @@
                     <a href="{% url 'comentario_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
                     {% for comentario in comentarios %}</p>
                         <tr>
-                        <td> <a href="{% url 'comentario_detail' pk=comentario.id %}">{{ comentario.fecha }}</a></td>
-                        <p> Fecha: {{comentario.fecha}}
+                        <td> <a href="{% url 'comentario_detail' pk=comentario.id %}">Fecha: {{ comentario.fecha }}</a></td>
+                        <br></br>
                         <p> Usuario: {{comentario.incidente.usuario}}</p>
                         <p> Comentario: {{comentario.comentario}}</p>
                         <br></br>

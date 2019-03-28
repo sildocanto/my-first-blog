@@ -7,8 +7,10 @@
                 {{ vehiculo.matricula}}
             </div>        
         {% endif %}
-        <a class="btn btn-default" href="{% url 'vehiculo_edit' pk=vehiculo.matricula %}"><span class="glyphicon glyphicon-pencil"></span></a>
-        <a class="btn btn-default" href="{% url 'vehiculo_delete' pk=vehiculo.matricula %}"><span class="glyphicon glyphicon-trash"></span></a>        
-        <h1>{{ vehiculo.matricula }}</h1>
+        <font style="font-size: 30px;"><label>
+        <a class="square_btn" href="{% url 'vehiculo_edit' pk=vehiculo.matricula %}"><span class="glyphicon glyphicon-pencil"></span></a>
+        <a class="square_btn" href="{% url 'vehiculo_delete' pk=vehiculo.matricula %}"><span class="glyphicon glyphicon-trash"></span></a>        
+        <h3>Matrícula: {{ vehiculo.matricula }}</h13>
     </div>
 {% endblock %}
+

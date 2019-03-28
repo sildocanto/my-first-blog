@@ -7,17 +7,25 @@
                 {{ comentario.id}}
             </div>        
         {% endif %}
-        <a class="btn btn-default" href="{% url 'comentario_edit' pk=comentario.id %}"><span class="glyphicon glyphicon-pencil"></span></a>
-        <a class="btn btn-default" href="{% url 'comentario_delete' pk=comentario.id %}"><span class="glyphicon glyphicon-trash"></span></a>        
-        <h1>{{ comentario.incidente.poliza.vehiculo.matricula }}</h1>
-        <p>{{ comentario.fecha|linebreaksbr }}</p>
-        <p>{{ comentario.incidente.nro_incidente|linebreaksbr }}</p>
-        <p>{{ comentario.incidente.estado|linebreaksbr }}</p>
-        <p>{{ comentario.incidente.poliza.nro_poliza|linebreaksbr }}</p>
-        <p>{{ comentario.incidente.poliza.cliente.nombre|linebreaksbr }}</p>
-        <p>{{ ccomentario.incidente.poliza.cliente.cedula|linebreaksbr }}</p>
-        <p>{{ comentario.incidente.usuario.nombre|linebreaksbr }}</p>
-        <p>{{ comentario.comentario|linebreaksbr }}</p>
-        <p>{{ comentario.incidente.fecha_mod|linebreaksbr }}</p>
+
+
+        <font style="font-size: 30px;"><label>
+        <a class="square_btn" href="{% url 'comentario_edit' pk=comentario.id %}"><span class="glyphicon glyphicon-pencil"></span></a>
+        <a class="square_btn" href="{% url 'comentario_delete' pk=comentario.id %}"><span class="glyphicon glyphicon-trash"></span></a>    
+        <br></br> 
+        <h3>Fecha: {{ comentario.fecha|linebreaksbr }}</h3>
+        <h3>Nro. Incidente: {{ comentario.incidente.nro_incidente|linebreaksbr }}</h3>
+        <h3>Estado: {{ comentario.incidente.estado|linebreaksbr }}</h3>
+        <br> 
+        <h3>Nro. Póliza: {{ comentario.incidente.poliza.nro_poliza|linebreaksbr }}</h3>
+        <h3>Matricula: {{ comentario.incidente.poliza.vehiculo.matricula }}</h3>
+        <h3>Nombre: {{ comentario.incidente.poliza.cliente.nombre|linebreaksbr }}</h3>
+        <h3>Cédula de identidad: {{ comentario.incidente.poliza.cliente.cedula|linebreaksbr }}</h3>
+        <br>
+        <h3>Usuario: {{ comentario.incidente.usuario.nombre|linebreaksbr }}</h3>
+        <h3>Comentario: {{ comentario.comentario|linebreaksbr }}</h3>
+        <h3>Fecha: {{ comentario.incidente.fecha_mod|linebreaksbr }}</h3>
     </div>
 {% endblock %}
+
+

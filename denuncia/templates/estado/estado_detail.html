@@ -1,14 +1,21 @@
 {% extends 'estado/base.html' %}
 
 {% block content %}
+
     <div class="estado">
         {% if estado.id %}
             <div class="date">
                 {{ estado.id}}
             </div>        
         {% endif %}
-        <a class="btn btn-default" href="{% url 'estado_edit' pk=estado.id %}"><span class="glyphicon glyphicon-pencil"></span></a>
-        <a class="btn btn-default" href="{% url 'estado_delete' pk=estado.id %}"><span class="glyphicon glyphicon-trash"></span></a>        
-        <h1>{{ estado.tipo }}</h1>
+        <br></br>
+        <font style="font-size: 30px;"><label>
+        <a class="square_btn" href="{% url 'estado_edit' pk=estado.id %}"><span class="glyphicon glyphicon-pencil"></span></a>
+        <a class="square_btn" href="{% url 'estado_delete' pk=estado.id %}"><span class="glyphicon glyphicon-trash"></span></a>  
+        <br></br>      
+        <h3>Tipo: {{ estado.tipo }}</h3>
     </div>
 {% endblock %}
+
+
+   

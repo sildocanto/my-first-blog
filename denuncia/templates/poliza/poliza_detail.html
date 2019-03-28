@@ -7,11 +7,15 @@
                 {{ poliza.nro_poliza}}
             </div>        
         {% endif %}
-        <a class="btn btn-default" href="{% url 'poliza_edit' pk=poliza.nro_poliza %}"><span class="glyphicon glyphicon-pencil"></span></a>
-        <a class="btn btn-default" href="{% url 'poliza_delete' pk=poliza.nro_poliza %}"><span class="glyphicon glyphicon-trash"></span></a>        
-        <h1>{{ poliza.nro_poliza }}</h1>
-        <p>{{ poliza.vehiculo.matricula|linebreaksbr }}</p>
-        <p>{{ poliza.cliente.nombre|linebreaksbr }}</p>
-        <p>{{ poliza.cliente.cedula|linebreaksbr }}</p>
+        <font style="font-size: 30px;"><label>
+        <a class="square_btn" href="{% url 'poliza_edit' pk=poliza.nro_poliza %}"><span class="glyphicon glyphicon-pencil"></span></a>
+        <a class="square_btn" href="{% url 'poliza_delete' pk=poliza.nro_poliza %}"><span class="glyphicon glyphicon-trash"></span></a>  
+        <br></br>     
+        <h3>Póliza Nro. {{ poliza.nro_poliza }}</h3>
+        <h3>Matrícula: {{ poliza.vehiculo.matricula|linebreaksbr }}</h3>
+        <h3>Nombre: {{ poliza.cliente.nombre|linebreaksbr }}</h3>
+        <h3>Cédula de identidad: {{ poliza.cliente.cedula|linebreaksbr }}</h3>
     </div>
 {% endblock %}
+
+

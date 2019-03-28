@@ -4,11 +4,12 @@
 
 	<table class='table'>
 		<tr>
-			<th>Link</th><th>Incidente</th><th>Poliza</th><th>Vehiculo</th><th>Cliente</th><th>Cedula cliente</th>
+			<th>Link</th><th>Incidente</th><th>Póliza</th><th>Matrícula</th><th>Cliente</th><th>Cedula</th>
 		</tr>
 		{% for archivo in archivos %} 
 			<tr>
-				<td> <a href={{ archivo.link }} target="_blank"> Imagen </a></td>
+
+				<td> <a href="{{ archivo.link }}" target="_blank"> Imagen </a></td>
 				<td>{{archivo.incidente.nro_incidente }} </td>
 				<td>{{archivo.incidente.poliza.nro_poliza }} </td>
 				<td>{{archivo.incidente.poliza.vehiculo.matricula }} </td>
@@ -21,3 +22,5 @@
 	
 {% endblock %}
 
+
+		

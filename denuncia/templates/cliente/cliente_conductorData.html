@@ -19,7 +19,7 @@
             
             <p><label>Fecha y Hora de incidente</label>{{ form.fecha_incidente }} 
             <p><label>Nombre Conductor</label>{{ form.pro_nombre }} 
-            </p><p><label>Cedula Conductor</label>{{ form.pro_cedula }} 
+            <p><label>Cedula Conductor</label>{{ form.pro_cedula }} 
             <p><label>Vencimiento licencia conducir</label>{{ form.pro_vto_libreta }} 
             <p><label>Telefono</label>{{ form.pro_telefono }} 
             <p><label>Email</label>{{ form.pro_email }} 
@@ -39,7 +39,7 @@
             {{ form.usuario.as_hidden }} 
             {{ form.fecha_mod.as_hidden }} 
             <br><br> 
-            <<button type="submit" class="square_btn">
+            <button type="submit" class="save square_btn">
                             <i class="fa fa-caret-right"></i><font style="font-size: 45px;"><label>Guardar</button>
         </form> 
 
@@ -48,4 +48,3 @@
 {% endblock %}
 
 
- 
