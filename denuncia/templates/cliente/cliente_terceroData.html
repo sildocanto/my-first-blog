@@ -7,7 +7,7 @@
     <!--div class="poliza"-->
 
     	<form method="POST" class="post-form">{% csrf_token %}
-        <fieldset><legend><font style="font-size: 50px;">Datos del Conductor</legend>
+        <fieldset><legend><font color="#fbfafa" style="font-size: 50px;">Datos del Conductor </font></legend>
 
         <!--form method="POST" class="post-form">{% csrf_token %}<-->
 
@@ -30,13 +30,13 @@
             
             <font style="font-size: 23px;"><span class="required">*</span>Correo electrónico: {{ form.pro_email }} 
            <br></br>
-            <font style="font-size: 23px;"><fieldset><legend><span class="required">*</span><b>Descripción del incidente: </b></legend>
+            <fieldset><legend><span class="required">*</span><b><font color="#fbfafa" style="font-size: 30px;">Descripción del incidente: </font></b></legend>
              {{ form.pro_descripción }} </fieldset>
 
             <div>    
            <br></br>
             <form method="POST" class="tercero">{% csrf_token %}
-            <fieldset><legend><font style-2="font-size: 50px;"><h1><b>Datos Tercero Involucrado:</h1></b></legend>
+            <fieldset><legend><legend><font color="#fbfafa" style="font-size: 50px;"><h1><b>Datos Tercero Involucrado:</h1></b></legend>
             <!--h3 class="tercero">Datos Tercero Involucrado:</h3-->
             </p>    
             <p><b>

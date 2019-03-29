@@ -404,7 +404,7 @@ input.input100 {
   justify-content: center;
   align-items: center;
   padding: 0 20px;
-  min-width: 500px;
+  min-width: 550px;
   height: 100px;
   background-color: #160f5c;
   border-radius: 50px;
@@ -815,13 +815,13 @@ input.input101 {
 }
 .form-style-3 fieldset legend{
   /*color: #FFA0C9;*/
-  border-top: 1px solid #FFD2D2;
-  border-left: 1px solid #FFD2D2;
-  border-right: 1px solid #FFD2D2;
+  border-top: 1px solid #4D9AB4;
+  border-left: 1px solid #4D9AB4;
+  border-right: 1px solid #4D9AB4;
   border-radius: 5px 5px 0px 0px;
   -webkit-border-radius: 5px 5px 0px 0px;
   -moz-border-radius: 5px 5px 0px 0px;
-  background: #BF158D80;
+  background: #1D1E65;
   padding: 0px 8px 3px 8px;
   box-shadow: -0px -1px 2px #F1F1F1;
   -moz-box-shadow:-0px -1px 2px #F1F1F1;
@@ -846,14 +846,14 @@ input.input101 {
   border-radius: 3px;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
-  border: 1px solid #FFC2DC;
+  border: 1px solid #0E199C;
   outline: none;
   color: #120109;
   padding: 15px 8px 5px 8px;
-  box-shadow: inset 1px 1px 4px #FFD5E7;
-  -moz-box-shadow: inset 1px 1px 4px #FFD5E7;
-  -webkit-box-shadow: inset 1px 1px 4px #FFD5E7;
-  background: #FFEFF6;
+  box-shadow: inset 1px 1px 4px #86B6FF;
+  -moz-box-shadow: inset 1px 1px 4px #86B6FF;
+  -webkit-box-shadow: inset 1px 1px 4px #86B6FF;
+  background: #EFF3FF;
   /*width:50%;*/
 }
 .form-style-3  input[type=submit],
