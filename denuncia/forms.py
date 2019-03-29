@@ -7,8 +7,8 @@ class ClienteForm(forms.ModelForm):
         fields = ('cedula', 'nombre', 'vehiculo',)
 
 class IniClienteForm(forms.Form):
-    cedula = forms.IntegerField()
-    vehiculo = forms.CharField(max_length=7)
+    cedula = forms.IntegerField(widget=forms.TextInput(attrs={'placeholder':'Ej:12345678'}))
+    vehiculo = forms.CharField(widget=forms.TextInput(attrs={'placeholder':'SAA2781'}))
 
 class TerceroDataForm(forms.Form):
     nro_poliza = forms.CharField(max_length=8)
@@ -23,7 +23,12 @@ class TerceroDataForm(forms.Form):
 class IncidenteForm(forms.ModelForm):
     class Meta:
         model = Incidente
-        fields = ('nro_incidente', 'poliza', 'hay_heridos', 'hay_terceros', 'fecha_incidente', 'estado', 'pro_nombre', 'pro_cedula', 'pro_vto_libreta', 'pro_telefono', 'pro_email', 'pro_descripción', 'ter_matricula', 'ter_aseguradora', 'ter_propietario', 'ter_nombre_conductor', 'ter_cedula_conductor', 'ter_telefono_conductor', 'usuario', 'fecha_mod')
+        fields = ('nro_incidente', 'poliza', 'hay_heridos', 'hay_terceros', 
+            'fecha_incidente', 'estado', 'pro_nombre', 'pro_cedula', 
+            'pro_vto_libreta', 'pro_telefono', 'pro_email', 'pro_descripción', 
+            'ter_matricula', 'ter_aseguradora', 'ter_propietario', 
+            'ter_nombre_conductor', 'ter_cedula_conductor', 'ter_telefono_conductor',
+             'usuario', 'fecha_mod')
 
 
 
@@ -70,5 +75,5 @@ class SeguimientoForm(forms.ModelForm):
 
 
 class IniSeguimientoForm(forms.Form):
-    usuario = forms.CharField(max_length=8)
-    clave = forms.CharField(widget=forms.PasswordInput(), max_length=8)
+    usuario = forms.CharField(widget=forms.TextInput(attrs={'placeholder':'Usuario'}))
+    clave = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder':'Clave'}), max_length=8)

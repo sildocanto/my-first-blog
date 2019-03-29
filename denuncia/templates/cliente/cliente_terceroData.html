@@ -1,15 +1,15 @@
 {% extends 'denuncia/base.html' %}
 
 {% block content %}
-    <div class="poliza">
-
-    	<h1>Datos Conductor</h1>
+    <div class="form-style-3">
 
 
-        <p><h4><label>Póliza Nro.</label> {{ poliza.nro_poliza }}</h4> 
-        <p><h4><label>Nombre:</label> {{ poliza.cliente.nombre }}</h4>
+    <!--div class="poliza"-->
 
-        <form method="POST" class="post-form">{% csrf_token %}
+    	<form method="POST" class="post-form">{% csrf_token %}
+        <fieldset><legend><font style="font-size: 50px;">Datos del Conductor</legend>
+
+        <!--form method="POST" class="post-form">{% csrf_token %}<-->
 
             {{ form.nro_incidente.as_hidden  }}      
 
@@ -18,32 +18,26 @@
             {{ form.hay_heridos.as_hidden  }} 
             {{ form.hay_terceros.as_hidden  }} 
             
-            <p><label>Fecha y Hora de incidente</label>{{ form.fecha_incidente }} 
-            <p><label>Nombre Conductor</label>{{ form.pro_nombre }} 
-            <p><label>Cedula Conductor</label>{{ form.pro_cedula }} 
-            <p><label>Vencimiento licencia conducir</label>{{ form.pro_vto_libreta }}<div class="container"></div>
-         <div class="row">
-                </div>
-                <p>
-                <div class="row">
-                <div class='col-sm-3'>
-                <div class="form-group">
-                <div class='input-group date' id='datetimepicker1'>
-                    <input type='text' class="form-control" />
-                    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
-                    </span>
-                </div>
-            </div>
-        </div>
-    </div>
-
-            <p><label>Telefono</label>{{ form.pro_telefono }} 
-            <p><label>Email</label>{{ form.pro_email }} 
-            <p><label>Descripcion del incidente</label>{{ form.pro_descripción }} 
+            <font style="font-size: 23px;"><label>Fecha y Hora de incidente: {{ form.fecha_incidente }}</label> 
+            
+            <font style="font-size: 23px;"><span class="required">*</span>Nombre Conductor: {{ form.pro_nombre }} 
+            
+            <font style="font-size: 23px;"><span class="required">*</span>Cédula Conductor: {{ form.pro_cedula }} 
+            
+            <font style="font-size: 23px;"><span class="required">*</span>Vto. licencia conducir: {{ form.pro_vto_libreta }} 
+           
+            <font style="font-size: 23px;"><span class="required">*</span>Teléfono: {{ form.pro_telefono }} 
+            
+            <font style="font-size: 23px;"><span class="required">*</span>Correo electrónico: {{ form.pro_email }} 
+           <br></br>
+            <font style="font-size: 23px;"><fieldset><legend><span class="required">*</span><b>Descripción del incidente: </b></legend>
+             {{ form.pro_descripción }} </fieldset>
 
             <div>    
-            <p>
-                <h3 class="tercero">Datos Tercero Involucrado:</h3>
+           <br></br>
+            <form method="POST" class="tercero">{% csrf_token %}
+            <fieldset><legend><font style-2="font-size: 50px;"><h1><b>Datos Tercero Involucrado:</h1></b></legend>
+            <!--h3 class="tercero">Datos Tercero Involucrado:</h3-->
             </p>    
             <p><b>
             <p><label class="tercero">Matricula</label>{{ form.ter_matricula }} 
@@ -62,8 +56,8 @@
 
             <br><br> 
 
-            <button type="submit" class="save square_btn">
-                            <i class="fa fa-caret-right"></i><font style="font-size: 45px;"><label>Guardar</button>
+            <button type="submit" class="save login102-form-btn">
+                            <i class="fa fa-caret-right"></i><font style-2="font-size: 55px;"><label>Finalizar</button>
         </form> 
 
     </div>

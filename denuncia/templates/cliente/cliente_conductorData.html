@@ -1,14 +1,15 @@
 {% extends 'denuncia/base.html' %}
 
 {% block content %}
-    <div class="poliza">
+    <div class="form-style-3">
 
-        <h1>Datos del Conductor</h1>
-
-
-        <h3>Nombre: {{ poliza.cliente.nombre }}</h3>
+        <h4><label>Póliza Nro. {{ poliza.nro_poliza }}</h4> 
+        <h4><label>Nombre: {{ poliza.cliente.nombre }}</h4>
 
         <form method="POST" class="post-form">{% csrf_token %}
+        <fieldset><legend><font style="font-size: 50px;">Datos del Conductor</legend>
+    
+            {{ poliza.cliente.nombre }}
 
             {{ form.nro_incidente.as_hidden  }}      
 
@@ -17,16 +18,26 @@
             {{ form.hay_heridos.as_hidden }}
             {{ form.hay_terceros.as_hidden }}
             
-            <p><label>Fecha y Hora de incidente</label>{{ form.fecha_incidente }} 
-            <p><label>Nombre Conductor</label>{{ form.pro_nombre }} 
-            <p><label>Cedula Conductor</label>{{ form.pro_cedula }} 
-            <p><label>Vencimiento licencia conducir</label>{{ form.pro_vto_libreta }} 
-            <p><label>Telefono</label>{{ form.pro_telefono }} 
-            <p><label>Email</label>{{ form.pro_email }} 
-            <p><label>Descripcion del incidente</label>{{ form.pro_descripción }} 
+            <font style="font-size: 23px;"><label>Fecha y Hora de incidente: {{ form.fecha_incidente }}</label> 
 
+            <font style="font-size: 23px;"><span class="required">*</span>Nombre Conductor: {{ form.pro_nombre }}
 
+            <font style="font-size: 23px;"><span class="required">*</span>Cédula Conductor: {{ form.pro_cedula }} 
+
+            <font style="font-size: 23px;"><span class="required">*</span>Vto. licencia conducir: {{ form.pro_vto_libreta }} 
+
+            <font style="font-size: 23px;"><span class="required">*</span>Teléfono: {{ form.pro_telefono }} 
+
+            <font style="font-size: 23px;"><span class="required">*</span>Correo electrónico: {{ form.pro_email }} 
+            <!--p><span class="required">*</span>Descripcion del incidente: 
+                {{ form.pro_descripción }}<--> 
+            <br></br>
+            
+            <form method="POST" class="post-form">{% csrf_token %}
+            <font style="font-size: 23px;"><fieldset><legend><span class="required">*</span><b>Descripción del incidente: </b></legend>
+             {{ form.pro_descripción }} </fieldset>
                     
+        
             {{ form.ter_matricula.as_hidden  }} 
             {{ form.ter_aseguradora.as_hidden  }} 
             {{ form.ter_propietario.as_hidden  }} 
@@ -39,8 +50,8 @@
             {{ form.usuario.as_hidden }} 
             {{ form.fecha_mod.as_hidden }} 
             <br><br> 
-            <button type="submit" class="save square_btn">
-                            <i class="fa fa-caret-right"></i><font style="font-size: 45px;"><label>Guardar</button>
+            <button type="submit" class="save login102-form-btn">
+                            <i class="fa fa-caret-right"></i><font style="font-size: 40px;"><label>Finalizar</button>
         </form> 
 
     </div>

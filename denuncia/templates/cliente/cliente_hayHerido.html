@@ -16,9 +16,9 @@
         <center><font style="font-size: 110px;"><center><label>Hay <b></b>heridos ? </label></font></center>
         <br></br>
        
-        <a class="btn btn-default" href="{% url 'cliente_hayTercero' pk=poliza.nro_poliza %}" ><font style="font-size: 90px;"><label>NO</a></label></font>
+        <a class="btn btn-default" href="{% url '911' %}"><font style="font-size: 90px;"><label>SI</a></label></font>
         
-        <a class="btn btn-default" href="{% url '911' %}"><font style="font-size: 90px;"><label>Si</a></label></font>
+        <a class="btn btn-default" href="{% url 'cliente_hayTercero' pk=poliza.nro_poliza %}" ><font style="font-size: 90px;"><label>NO</a></label></font>
 
 
     	
@@ -29,7 +29,9 @@
 
 
 
-
+   <!--a class="btn btn-default" href="{% url 'cliente_hayTercero' pk=poliza.nro_poliza %}" ><font style="font-size: 90px;"><label>SI</a></label></font>
+        
+        <a class="btn btn-default" href="{% url '911' %}"><font style="font-size: 90px;"><label>NO</a></label></font-->
 
         
 

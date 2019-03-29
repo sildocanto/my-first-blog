@@ -2,7 +2,7 @@
 
 {% block content %}
     <div class="incidente">
-        <font style="font-size: 30px;"><label>Incidente número: <b>{{ incidente.nro_incidente}}</b></label>
+       
         <p>
         <br></br>
         <br></br>
@@ -10,7 +10,7 @@
         	<div id="logo-container">
         		<img class="center-block" src="/static/denuncia realizada con exito.png" id="centro" />
         		<form action="reservar.php" name="mireserva" id="mireserva" method="POST" style="text-align:center">
-    				
+    			<font style="font-size: 30px;"><label>Incidente número: <b>{{ incidente.nro_incidente}}</b></label>	
 
 				</form>
 				<form action="confirmar.php" name="miconfirmar" id="miconfirmar" method="POST" style="text-align:center">
